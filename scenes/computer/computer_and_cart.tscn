@@ -2,18 +2,25 @@
 
 [ext_resource type="Script" uid="uid://0wdd7pxn2i7s" path="res://scenes/misc/computer_and_cart.gd" id="1_hplv3"]
 [ext_resource type="PackedScene" uid="uid://b7nkm5t0cqpkg" path="res://shared/assets/3d/glb/computer_and_cart.glb" id="2_rp7uj"]
-[ext_resource type="ArrayMesh" uid="uid://imyfqko5kt77" path="res://shared/assets/3d/glb/screen.res" id="3_2hh5w"]
+[ext_resource type="ArrayMesh" uid="uid://d0qgei336uwtx" path="res://shared/assets/3d/glb/screen.res" id="3_2hh5w"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_2hh5w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2hh5w"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_2hh5w")
 
 [node name="ComputerAndCart" type="Node3D" unique_id=104138633 node_paths=PackedStringArray("screen_mesh")]
 script = ExtResource("1_hplv3")
-screen_mesh = NodePath("computer_and_cart/Screen")
+screen_mesh = NodePath("MeshInstance3D")
 
 [node name="computer_and_cart" parent="." unique_id=723810771 instance=ExtResource("2_rp7uj")]
 
-[node name="Screen" parent="computer_and_cart" index="2" unique_id=414880858]
+[node name="Screen" parent="computer_and_cart" index="2" unique_id=1999423244]
 visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=297863279]
 mesh = ExtResource("3_2hh5w")
+surface_material_override/0 = SubResource("StandardMaterial3D_2hh5w")
 
 [editable path="computer_and_cart"]
