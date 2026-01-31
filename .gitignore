@@ -2,3 +2,5 @@
 .godot/
 /android/
 ~local/
+
+.DS_Store/
