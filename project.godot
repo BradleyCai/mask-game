@@ -22,7 +22,8 @@ enabled=PackedStringArray("res://addons/moon-registry/plugin.cfg")
 
 folder_colors={
 "res://addons/": "gray",
-"res://scenes/": "green"
+"res://scenes/": "green",
+"res://shared/": "blue"
 }
 
 [input]

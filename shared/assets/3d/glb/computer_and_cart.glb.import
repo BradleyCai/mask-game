@@ -44,6 +44,17 @@ _subresources={
 "use_external/fallback_path": "res://shared/assets/3d/glb/computer_card_monitor_material.tres",
 "use_external/path": "uid://baer0pk7fcex7"
 }
+},
+"meshes": {
+"computer_and_cart_Sphere": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://shared/assets/3d/glb/screen.res",
+"save_to_file/path": "uid://d0qgei336uwtx"
+}
 }
 }
 gltf/naming_version=2
