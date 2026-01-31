@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cimnuf8w5g66b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_11xiq"]
+transparency = 1
+albedo_color = Color(0, 0, 0, 0.5529412)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_llj28"]
+material = SubResource("StandardMaterial3D_11xiq")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_11xiq"]
+
+[node name="Pillar" type="Node3D" unique_id=302520146]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1631213404]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("CylinderMesh_llj28")
+
+[node name="SelectArea" type="Area3D" parent="MeshInstance3D" unique_id=1173826589]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/SelectArea" unique_id=327592469]
+shape = SubResource("CylinderShape3D_11xiq")

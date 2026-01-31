@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bk0vpa3n74vx5" path="res://shared/assets/images/debug/orange.png" id="1_alvx4"]
 [ext_resource type="Texture2D" uid="uid://cpmxigxpqfx1a" path="res://shared/assets/images/debug/dark.png" id="2_3nb0h"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="3_6lg67"]
+[ext_resource type="PackedScene" uid="uid://kfm2wy2udp45" path="res://scenes/computer/computer_and_cart.tscn" id="4_3nb0h"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hxags"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -66,3 +67,12 @@ shape = SubResource("ConcavePolygonShape3D_hxags")
 [node name="Character" parent="." unique_id=1730607155 instance=ExtResource("3_6lg67")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.8421545, 0, 0)
 in_air_momentum = false
+
+[node name="ComputerAndCart" parent="." unique_id=104138633 node_paths=PackedStringArray("viewport") instance=ExtResource("4_3nb0h")]
+transform = Transform3D(0.0009424248, 0, -0.9999996, 0, 1, 0, 0.9999996, 0, 0.0009424248, 7.8807864, 3.3806353, 0)
+viewport = NodePath("../SubViewport")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1993247845]
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport" unique_id=804763492]
+transform = Transform3D(-0.11812666, 0, -0.99299854, 0, 1, 0, 0.99299854, 0, -0.11812666, 0, 3.1979299, 0)
