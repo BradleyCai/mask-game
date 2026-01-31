@@ -2,7 +2,24 @@
 
 [ext_resource type="PackedScene" uid="uid://b7nkm5t0cqpkg" path="res://shared/assets/3d/glb/computer_and_cart.glb" id="1_r8jn6"]
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_r8jn6"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r8jn6"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_r8jn6")
+
 [node name="JakeComputerTest" type="Node3D" unique_id=566475299]
 
-[node name="computer_and_cart" parent="." unique_id=751489356 instance=ExtResource("1_r8jn6")]
+[node name="computer_and_cart" parent="." unique_id=388002702 instance=ExtResource("1_r8jn6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.1553717, 0)
+
+[node name="Screen" parent="computer_and_cart" index="2" unique_id=1533431384]
+surface_material_override/0 = SubResource("StandardMaterial3D_r8jn6")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1908938769]
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport" unique_id=850589906]
+transform = Transform3D(0.84590477, 0, -0.5333341, 0.30081674, 0.8257539, 0.47711617, 0.4404027, -0.5640306, 0.69850916, -4.176573, 6.5884547, 5.437024)
+
+[editable path="computer_and_cart"]
