@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://kmc41figq1sq"]
+
+[ext_resource type="PackedScene" uid="uid://b7nkm5t0cqpkg" path="res://shared/assets/3d/glb/computer_and_cart.glb" id="1_r8jn6"]
+
+[node name="JakeComputerTest" type="Node3D" unique_id=566475299]
+
+[node name="computer_and_cart" parent="." unique_id=751489356 instance=ExtResource("1_r8jn6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.1553717, 0)
