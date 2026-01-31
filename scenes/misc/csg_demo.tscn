@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://l78a7iasobh4"]
+
+[ext_resource type="Texture2D" uid="uid://bk0vpa3n74vx5" path="res://shared/assets/images/debug/orange.png" id="1_alvx4"]
+[ext_resource type="Texture2D" uid="uid://cpmxigxpqfx1a" path="res://shared/assets/images/debug/dark.png" id="2_3nb0h"]
+[ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="3_6lg67"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hxags"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_lo0ai"]
+sky_material = SubResource("ProceduralSkyMaterial_hxags")
+
+[sub_resource type="Environment" id="Environment_eklv6"]
+background_mode = 2
+sky = SubResource("Sky_lo0ai")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lo0ai"]
+transparency = 1
+blend_mode = 1
+albedo_texture = ExtResource("1_alvx4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yop8q"]
+albedo_texture = ExtResource("2_3nb0h")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_slrhr"]
+size = Vector2(20, 20)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_hxags"]
+data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
+
+[node name="Node3D" type="Node3D" unique_id=1708574596]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1289638873]
+environment = SubResource("Environment_eklv6")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1809365791]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="wall" type="CSGCombiner3D" parent="." unique_id=2094516682]
+material_override = SubResource("StandardMaterial3D_lo0ai")
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="wall" unique_id=960529195]
+size = Vector3(0.2, 10, 20)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="wall" unique_id=124380760]
+transform = Transform3D(-0.53124493, -0.8067165, -0.25881913, -0.8351744, 0.54998523, 0, 0.1423467, 0.2161591, -0.9659258, 0, 0.87881327, 0)
+operation = 2
+radius = 3.0
+height = 7.0
+sides = 20
+
+[node name="ground" type="MeshInstance3D" parent="." unique_id=2129216718]
+material_override = SubResource("StandardMaterial3D_yop8q")
+mesh = SubResource("PlaneMesh_slrhr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ground" unique_id=1927292219]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground/StaticBody3D" unique_id=445750144]
+shape = SubResource("ConcavePolygonShape3D_hxags")
+
+[node name="Character" parent="." unique_id=1730607155 instance=ExtResource("3_6lg67")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.8421545, 0, 0)
+in_air_momentum = false

@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="RegistryCollection" format=3 uid="uid://cx1do2l5hcbg8"]
+
+[ext_resource type="Script" uid="uid://counuj1l33fav" path="res://addons/moon-registry/data/registry.gd" id="1_g76xr"]
+[ext_resource type="Script" uid="uid://cps0w3c1g6x35" path="res://addons/moon-registry/data/registry_collection.gd" id="2_hwpud"]
+[ext_resource type="Script" uid="uid://q25om8hee1co" path="res://addons/moon-registry/editor/registry_editor.gd" id="3_wdnj0"]
+[ext_resource type="Script" uid="uid://b6qjqcvbbrp31" path="res://addons/moon-registry/editor/registry_panel.gd" id="5_wdnj0"]
+[ext_resource type="Script" uid="uid://cifm8knkw0etw" path="res://addons/moon-registry/editor/resource_panel.gd" id="6_2nd4q"]
+[ext_resource type="Script" uid="uid://bd0oali0rnllu" path="res://addons/moon-registry/plugin.gd" id="6_he0c8"]
+[ext_resource type="Script" uid="uid://hutuis63hgev" path="res://addons/fpc/character.gd" id="7_kjvlc"]
+[ext_resource type="Script" uid="uid://u5u7xxlvmcxx" path="res://addons/fpc/debug.gd" id="8_ptyuw"]
+[ext_resource type="Script" uid="uid://dgfl3skp075ft" path="res://addons/fpc/EditorModule.gd" id="9_pgd8c"]
+
+[sub_resource type="Resource" id="Resource_bfo2e"]
+resource_name = "all_textures"
+script = ExtResource("1_g76xr")
+name = &"all_textures"
+directory = "res://"
+scan_subdirectories = true
+type = &"Texture2D"
+use_exact_type = false
+
+[sub_resource type="Resource" id="Resource_hwpud"]
+resource_name = "resource_registry_scripts"
+script = ExtResource("1_g76xr")
+name = &"resource_registry_scripts"
+id_to_resource = Dictionary[int, Resource]({
+0: ExtResource("1_g76xr"),
+1: ExtResource("6_he0c8"),
+2: ExtResource("3_wdnj0"),
+3: ExtResource("2_hwpud"),
+4: ExtResource("5_wdnj0"),
+5: ExtResource("6_2nd4q"),
+6: ExtResource("7_kjvlc"),
+7: ExtResource("8_ptyuw"),
+8: ExtResource("9_pgd8c")
+})
+directory = "res://addons"
+scan_subdirectories = true
+type = &"GDScript"
+metadata/_custom_type_script = "uid://counuj1l33fav"
+
+[sub_resource type="Resource" id="Resource_pkd2b"]
+resource_name = "resource_registry_editor_scripts"
+script = ExtResource("1_g76xr")
+name = &"resource_registry_editor_scripts"
+id_to_resource = Dictionary[int, Resource]({
+0: ExtResource("3_wdnj0"),
+1: ExtResource("5_wdnj0"),
+2: ExtResource("6_2nd4q")
+})
+directory = "res://addons/moon-registry/editor"
+type = &"GDScript"
+
+[resource]
+script = ExtResource("2_hwpud")
+registries = Array[ExtResource("1_g76xr")]([SubResource("Resource_bfo2e"), SubResource("Resource_hwpud"), SubResource("Resource_pkd2b")])
+metadata/_custom_type_script = "uid://cps0w3c1g6x35"
