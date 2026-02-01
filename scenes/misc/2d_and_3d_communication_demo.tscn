@@ -71,6 +71,7 @@ character = NodePath("../Character")
 
 [node name="ViewportCamera" type="Camera3D" parent="SubViewport" unique_id=1844864025]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10, 0.709)
+cull_mask = 2
 projection = 1
 size = 14.958
 
@@ -96,9 +97,10 @@ transform = Transform3D(-0.99813694, -2.6669893e-09, -0.0610136, 2.6669893e-09, 
 mesh = SubResource("SphereMesh_ps4jx")
 
 [node name="MouseRay" type="RayCast3D" parent="." unique_id=929385396]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.012743, 31.280197, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8010254, 31.280197, 0)
 target_position = Vector3(0, -50, 0)
+collision_mask = 2
 script = ExtResource("4_26bwt")
 
 [node name="Pillar" parent="MouseRay" unique_id=302520146 instance=ExtResource("3_anfke")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.375804, -27.643215, -5.4285903)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -28.27, 0)

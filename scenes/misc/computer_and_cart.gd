@@ -9,6 +9,7 @@ extends Node3D
 @export var shape : CollisionShape3D
 
 var box_size : Vector2
+var last_poll_pressed : bool = false
 
 func _ready() -> void:
 	var mat : StandardMaterial3D = screen_mesh.mesh.surface_get_material(0)
@@ -23,7 +24,7 @@ func _ready() -> void:
 
 
 func _on_screen_area_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	if event.is_action("interact") and event.is_pressed():
+	if last_poll_pressed:
 		var relative : Vector3  = event_position - screen_area.global_position
 		var relative_2d : Vector2 = (Vector2(relative.x, relative.y) / box_size) + Vector2(.5, .5)
 		relative_2d.y = 1 - relative_2d.y
@@ -33,4 +34,13 @@ func _on_screen_area_input_event(camera: Node, event: InputEvent, event_position
 		var viewport_position : Vector2 = relative_2d * viewport_size
 		var projected_camera_position : Vector3 = viewport_cam.project_position(viewport_position, viewport_cam.global_position.y)
 		var new_pos : Vector3 = Vector3(projected_camera_position.x, character.global_position.y, projected_camera_position.z)
-		Signals.move_mask_to_world_point_requested.emit(new_pos)		
+		Signals.move_mask_to_world_point_requested.emit(new_pos)
+	
+	if event.is_action("interact"):
+		if event.is_pressed():
+			last_poll_pressed = true	
+		else:
+			if last_poll_pressed:
+				print("Relase!")	
+			last_poll_pressed = false
+		
