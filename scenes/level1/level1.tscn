@@ -8,6 +8,8 @@
 [ext_resource type="Shader" uid="uid://biv5h5mcp73uy" path="res://shaders/TV.gdshader" id="6_q6uuj"]
 [ext_resource type="PackedScene" uid="uid://nuv1t6k08cgl" path="res://scenes/computer/computer_view_sub_viewport.tscn" id="7_wmcwa"]
 [ext_resource type="PackedScene" uid="uid://kfm2wy2udp45" path="res://scenes/computer/computer_and_cart.tscn" id="8_kcfjd"]
+[ext_resource type="PackedScene" path="res://shared/code/triggers/TriggerBodyEntered.tscn" id="9_q6uuj"]
+[ext_resource type="PackedScene" uid="uid://bp3sa06aifvp3" path="res://shared/code/actions/SwitchSceneAction.tscn" id="10_wmcwa"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r58hw"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -45,6 +47,9 @@ shader_parameter/bottomStaticStrenth = 0.7
 shader_parameter/scalinesOpt = 0.8
 shader_parameter/rgbOffsetOpt = 0.2
 shader_parameter/horzFuzzOpt = 0.15
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q6uuj"]
+size = Vector3(4.7525635, 5.8921204, 1.5756836)
 
 [node name="Level1" type="Node3D" unique_id=1974743313]
 
@@ -112,5 +117,15 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -7.0
 transform = Transform3D(0.79271543, 0, 0.6095919, 0, 1, 0, -0.6095919, 0, 0.79271543, -3.075941, 0.06630123, -28.494751)
 viewport = NodePath("../ComputerViewSubViewport")
 mouse_ray = NodePath("../MouseRay")
+
+[node name="TriggerBodyEntered" parent="." unique_id=1499705430 instance=ExtResource("9_q6uuj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.791051, 0.6420618, -65.0701)
+
+[node name="SwitchSceneAction" parent="TriggerBodyEntered" unique_id=2073713395 instance=ExtResource("10_wmcwa")]
+_scene = "uid://3sl10epbswwf"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerBodyEntered" unique_id=721356913]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09588623, 2.4460602, -0.2878418)
+shape = SubResource("BoxShape3D_q6uuj")
 
 [editable path="ComputerViewSubViewport"]

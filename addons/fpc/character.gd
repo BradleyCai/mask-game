@@ -238,7 +238,7 @@ func enter_computer_view_mode(computer : ComputerAndCart):
 	can_exit_computer_state = false
 	# reparent(computer.player_view_position)
 	var main_tween : Tween = create_tween()
-	main_tween.tween_property(self, "global_position", computer.player_view_position.global_position, 1.0)
+	main_tween.tween_property(self, "global_position", computer.player_view_position.global_position, .5)
 	main_tween.tween_interval(.5) # Extra sec to wait after being done
 	var old_rot : Vector3 = HEAD.rotation_degrees
 	HEAD.global_rotation_degrees = computer.player_view_position.global_rotation_degrees
@@ -246,7 +246,7 @@ func enter_computer_view_mode(computer : ComputerAndCart):
 	# HEAD.rotation_degrees.y = 0
 	var desired_transform : Transform3D = HEAD.transform
 	HEAD.rotation_degrees = old_rot
-	create_tween().tween_property(HEAD, "transform", desired_transform, 1.0)
+	create_tween().tween_property(HEAD, "transform", desired_transform, .5)
 	# global_transform = Transform3D(computer.player_view_position.global_transform)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	_enter_state(CharacterState.AT_COMPUTER)
