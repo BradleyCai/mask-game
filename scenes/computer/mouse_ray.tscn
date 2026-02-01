@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c0sayalrwngb4"]
+[gd_scene format=3 uid="uid://cq7cubtlrmi05"]
 
 [ext_resource type="Script" uid="uid://cma57a7whdr8g" path="res://scenes/computer/mouse_ray.gd" id="1_blf8b"]
 [ext_resource type="PackedScene" uid="uid://cimnuf8w5g66b" path="res://scenes/masks/pillar.tscn" id="2_jqooh"]
@@ -9,4 +9,3 @@ collision_mask = 2
 script = ExtResource("1_blf8b")
 
 [node name="Pillar" parent="." unique_id=302520146 instance=ExtResource("2_jqooh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -28.27, 0)
