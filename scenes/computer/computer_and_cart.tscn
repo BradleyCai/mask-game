@@ -32,6 +32,9 @@ blend_shape_mode = 0
 [sub_resource type="BoxShape3D" id="BoxShape3D_2hh5w"]
 size = Vector3(0.305, 0.305, 0.1134419)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_bpwd2"]
+size = Vector3(1.5615997, 1.4447327, 1.4376831)
+
 [node name="ComputerAndCart" type="Node3D" unique_id=104138633 node_paths=PackedStringArray("screen_mesh", "player_view_position", "screen_area", "shape")]
 script = ExtResource("1_hplv3")
 screen_mesh = NodePath("Node3D/ViewportScreen")
@@ -52,7 +55,7 @@ mesh = SubResource("ArrayMesh_2hh5w")
 mesh = ExtResource("3_2hh5w")
 
 [node name="PlayerViewPosition" type="Node3D" parent="." unique_id=895917849]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.0063735396, -0.020561729, 0.45200515)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0063735396, -0.020561729, 0.45200515)
 
 [node name="ScreenArea" type="Area3D" parent="." unique_id=175358670]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3159131, 0.12724939)
@@ -62,6 +65,15 @@ monitoring = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.014279053)
 shape = SubResource("BoxShape3D_2hh5w")
 
+[node name="InteractArea" type="Area3D" parent="." unique_id=1111008882]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea" unique_id=676534540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008613586, 0.7653961, 0.47329712)
+shape = SubResource("BoxShape3D_bpwd2")
+
 [connection signal="input_event" from="ScreenArea" to="." method="_on_screen_area_input_event"]
+[connection signal="body_entered" from="InteractArea" to="." method="_on_interact_area_body_entered"]
 
 [editable path="Node3D/computer_and_cart"]

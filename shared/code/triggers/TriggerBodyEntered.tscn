@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://btkwmn8wc0tj0"]
+
+[sub_resource type="GDScript" id="GDScript_hvfmt"]
+resource_name = "TriggerSignal"
+script/source = "extends Area3D
+
+func _ready() -> void:
+	self.body_entered.connect(trigger)
+
+func trigger(_unused) -> void:
+	TriggerUtil.trigger(self)
+"
+
+[node name="TriggerBodyEntered" type="Area3D" unique_id=1499705430]
+script = SubResource("GDScript_hvfmt")
