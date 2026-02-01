@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://btkwmn8wc0tj0"]
+
+[sub_resource type="GDScript" id="GDScript_hvfmt"]
+resource_name = "TriggerSignal"
+script/source = "extends Node
+
+@export var signal_node: Node
+@export var signal_name: StringName
+
+func _ready() -> void:
+	signal_node.connect(signal_name, trigger)
+
+func trigger() -> void:
+	TriggerUtil.trigger(self)
+"
+
+[node name="TriggerSignal" type="Node"]
+script = SubResource("GDScript_hvfmt")

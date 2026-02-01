@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bblxa3yh4b3ke"]
+
+[sub_resource type="GDScript" id="GDScript_ea0tr"]
+resource_name = "TriggerButton"
+script/source = "extends Button
+
+func _ready() -> void:
+	self.pressed.connect(trigger)
+
+func trigger() -> void:
+	TriggerUtil.trigger(self)
+"
+
+[node name="TriggerButton" type="Button" unique_id=2081045250]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+script = SubResource("GDScript_ea0tr")

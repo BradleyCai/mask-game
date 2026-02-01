@@ -21,7 +21,7 @@ Signals="*uid://bjesn1ggr16u2"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/moon-registry/plugin.cfg")
+enabled=PackedStringArray()
 
 [file_customization]
 
