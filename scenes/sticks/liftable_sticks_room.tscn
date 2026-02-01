@@ -42,9 +42,10 @@ shadow_enabled = true
 environment = SubResource("Environment_t57k4")
 
 [node name="sticks2" parent="." instance=ExtResource("1_p17da")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7959453, 0, -0.8237903)
 
 [node name="bowl_ball" type="RigidBody3D" parent="." groups=["ball"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7685306, 4.013512, -2.522201)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6581948, 1.678705, -1.9458213)
 script = ExtResource("2_2qt5s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bowl_ball"]
