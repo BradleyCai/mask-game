@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://vvar7t5g3rfr"]
+
+[sub_resource type="GDScript" id="GDScript_xfwkv"]
+resource_name = "TriggerImmediate"
+script/source = "extends Node
+
+func _ready() -> void:
+	self.call_deferred(&\"trigger\")
+
+func trigger() -> void:
+	TriggerUtil.trigger(self)
+"
+
+[node name="TriggerImmediate" type="Node" unique_id=902970502]
+script = SubResource("GDScript_xfwkv")
