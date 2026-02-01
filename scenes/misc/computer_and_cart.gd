@@ -20,7 +20,12 @@ func _ready() -> void:
 
 func _on_screen_area_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
 	if last_poll_pressed:
-		var relative : Vector3  = event_position - screen_area.global_position
+		# old
+		#var relative : Vector3  = event_position - screen_area.global_position
+
+		# new
+		var relative : Vector3 = screen_area.to_local(event_position)
+
 		var relative_2d : Vector2 = (Vector2(relative.x, relative.y) / box_size) + Vector2(.5, .5)
 		relative_2d.y = 1 - relative_2d.y
 		var viewport_cam : Camera3D = GameManager.get_viewport_camera()
