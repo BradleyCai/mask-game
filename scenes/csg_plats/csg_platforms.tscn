@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://b62vo4ftcdavk"]
+[gd_scene load_steps=11 format=3 uid="uid://b62vo4ftcdavk"]
 
 [ext_resource type="Texture2D" uid="uid://cpmxigxpqfx1a" path="res://shared/assets/images/debug/dark.png" id="1_513p7"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_sclr2"]
-[ext_resource type="Script" uid="uid://didc8433ba4d3" path="res://scenes/csg_plats/csg_cylinder_3d.gd" id="3_sclr2"]
+[ext_resource type="PackedScene" uid="uid://kfm2wy2udp45" path="res://scenes/computer/computer_and_cart.tscn" id="4_lcih3"]
+[ext_resource type="PackedScene" uid="uid://cq7cubtlrmi05" path="res://scenes/computer/mouse_ray.tscn" id="5_gqyf1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o577s"]
 albedo_texture = ExtResource("1_513p7")
@@ -63,7 +64,6 @@ shape = SubResource("ConcavePolygonShape3D_6xly2")
 
 [node name="Character" parent="." instance=ExtResource("2_sclr2")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.647597, 0, 0)
-collision_layer = 5
 in_air_momentum = false
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
@@ -79,10 +79,10 @@ transform = Transform3D(2.6305838, 0, 0, 0, 0.19999999, 0, 0, 0, 2.0683005, -2.9
 transform = Transform3D(2.6305838, 0, 0, 0, 0.19999999, 0, 0, 0, 2.0683005, 0.4567442, -4.7683716e-07, -4.893982)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D"]
-transform = Transform3D(3.8087044, 0, 0, 0, 1.0000004, 0, 0, 0, 3.8529968, -1.217946, 0, -2.842311)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22033024, -4.7683716e-07, 0.081252575)
 operation = 1
+radius = 1.5
 sides = 16
-script = ExtResource("3_sclr2")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_sclr2")
@@ -90,3 +90,24 @@ environment = SubResource("Environment_sclr2")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.5000001, -0.75, 0.43301266, 0, 0.49999997, 0.86602545, -0.8660254, -0.4330128, 0.25000003, -4.8421545, 0, 0)
 shadow_enabled = true
+
+[node name="ComputerAndCart" parent="." node_paths=PackedStringArray("viewport") instance=ExtResource("4_lcih3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6740394, -4.7683716e-07, -8.457752)
+viewport = NodePath("../SubViewport")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="ViewportCamera" type="Camera3D" parent="SubViewport"]
+transform = Transform3D(1, 0, 0, 0, -2.9802319e-08, 1, 0, -1, -2.9802319e-08, -1.8474026, 15.021233, 1.5516624)
+
+[node name="MouseRay" parent="." instance=ExtResource("5_gqyf1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22033024, -4.7683716e-07, 0.081252575)
+
+[node name="Pillar" parent="MouseRay" index="0"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="MouseRay"]
+remote_path = NodePath("../../CSGCombiner3D/CSGCylinder3D")
+update_scale = false
+
+[editable path="MouseRay"]
