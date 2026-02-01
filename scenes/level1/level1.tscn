@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c3y5d54mu1pm1"]
 
+[ext_resource type="Environment" uid="uid://ch8jum6qs1fxb" path="res://environments/main_environment.tres" id="1_wmcwa"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_k2gg7"]
 [ext_resource type="Texture2D" uid="uid://bk0vpa3n74vx5" path="res://shared/assets/images/debug/orange.png" id="3_fcv37"]
 [ext_resource type="PackedScene" uid="uid://bxjmk0vd8ntqt" path="res://scenes/room_shell/room_shell.tscn" id="3_k2gg7"]
@@ -10,19 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://kfm2wy2udp45" path="res://scenes/computer/computer_and_cart.tscn" id="8_kcfjd"]
 [ext_resource type="PackedScene" path="res://shared/code/triggers/TriggerBodyEntered.tscn" id="9_q6uuj"]
 [ext_resource type="PackedScene" uid="uid://bp3sa06aifvp3" path="res://shared/code/actions/SwitchSceneAction.tscn" id="10_wmcwa"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r58hw"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_k2gg7"]
-sky_material = SubResource("ProceduralSkyMaterial_r58hw")
-
-[sub_resource type="Environment" id="Environment_l6sy8"]
-background_mode = 2
-sky = SubResource("Sky_k2gg7")
-tonemap_mode = 2
-glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k3l6j"]
 transparency = 1
@@ -54,7 +42,7 @@ size = Vector3(4.7525635, 5.8921204, 1.5756836)
 [node name="Level1" type="Node3D" unique_id=1974743313]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1070458160]
-environment = SubResource("Environment_l6sy8")
+environment = ExtResource("1_wmcwa")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=135235478]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
