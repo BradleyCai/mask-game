@@ -17,7 +17,7 @@ func _ready():
 
 func _physics_process(delta):
 	var target_pos = mask_pos.global_position
-	actual_pos = actual_pos.move_toward(target_pos, 3 * delta)
+	actual_pos = actual_pos.move_toward(target_pos, 5 * delta)
 
 	for body in bodies:
 		var p1 = body.global_position

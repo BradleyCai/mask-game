@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://nuv1t6k08cgl" path="res://scenes/computer/computer_view_sub_viewport.tscn" id="5_lcih3"]
 [ext_resource type="PackedScene" uid="uid://bxjmk0vd8ntqt" path="res://scenes/room_shell/room_shell.tscn" id="6_gqyf1"]
 [ext_resource type="Shader" uid="uid://biv5h5mcp73uy" path="res://shaders/TV.gdshader" id="7_yrjl7"]
+[ext_resource type="PackedScene" uid="uid://btkwmn8wc0tj0" path="res://shared/code/triggers/TriggerBodyEntered.tscn" id="8_v4wq6"]
+[ext_resource type="PackedScene" uid="uid://blmco1pmd8k5h" path="res://shared/code/actions/Move3DPosAction.tscn" id="9_ympke"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o577s"]
 albedo_texture = ExtResource("1_513p7")
@@ -43,6 +45,9 @@ shader_parameter/bottomStaticStrenth = 0.7
 shader_parameter/scalinesOpt = 0.8
 shader_parameter/rgbOffsetOpt = 0.2
 shader_parameter/horzFuzzOpt = 0.15
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v4wq6"]
+size = Vector3(100, 1, 100)
 
 [node name="Node3D" type="Node3D" unique_id=901053143]
 
@@ -158,6 +163,16 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="TriggerBodyEntered" parent="." unique_id=1499705430 instance=ExtResource("8_v4wq6")]
+
+[node name="Move3dPosAction" parent="TriggerBodyEntered" unique_id=1629091126 node_paths=PackedStringArray("move_target") instance=ExtResource("9_ympke")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.826107, 0, 3.8725996)
+move_target = NodePath("../../Character")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerBodyEntered" unique_id=25539498]
+transform = Transform3D(14.602172, 0, 0, 0, 1, 0, 0, 0, 29.88236, 0, -4.547285, 0)
+shape = SubResource("BoxShape3D_v4wq6")
 
 [editable path="SubViewport"]
 [editable path="SubViewport2"]

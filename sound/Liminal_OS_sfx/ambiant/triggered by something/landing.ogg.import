@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bql4sw53780b7"
+path="res://.godot/imported/landing.ogg-19d55faa210e840d89e9b3e0d7820ddd.oggvorbisstr"
+
+[deps]
+
+source_file="res://sound/Liminal_OS_sfx/ambiant/triggered by something/landing.ogg"
+dest_files=["res://.godot/imported/landing.ogg-19d55faa210e840d89e9b3e0d7820ddd.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

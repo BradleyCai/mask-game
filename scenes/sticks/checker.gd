@@ -1,5 +1,6 @@
 extends Area3D
 
+@export var sliding_door: SlidingDoor
 @export var light_path: NodePath
 @onready var light := get_node(light_path)
 
@@ -18,8 +19,11 @@ func _on_body_entered(body: Node) -> void:
 	if body is BowlBall:
 		on = true
 		light.visible = true
+		sliding_door.animation_player.play("open_door")
+
 
 func _on_body_exited(body: Node) -> void:
 	if body is BowlBall:
-		on = false
-		light.visible = false
+		pass
+		#on = false
+		#light.visible = false

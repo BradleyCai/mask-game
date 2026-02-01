@@ -44,7 +44,7 @@ transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 0, 1.3157625, 0)
 
 [node name="computer_and_cart" parent="Node3D" unique_id=1049810209 instance=ExtResource("2_rp7uj")]
 
-[node name="Screen" parent="Node3D/computer_and_cart" index="2" unique_id=378642718]
+[node name="Screen" parent="Node3D/computer_and_cart" index="2" unique_id=288812148]
 visible = false
 mesh = SubResource("ArrayMesh_2hh5w")
 

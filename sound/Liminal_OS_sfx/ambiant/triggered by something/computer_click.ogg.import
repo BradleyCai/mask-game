@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b5g6xl42jemc7"
+path="res://.godot/imported/computer_click.ogg-359a6b049c95d8590f42f5c105829402.oggvorbisstr"
+
+[deps]
+
+source_file="res://sound/Liminal_OS_sfx/ambiant/triggered by something/computer_click.ogg"
+dest_files=["res://.godot/imported/computer_click.ogg-359a6b049c95d8590f42f5c105829402.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

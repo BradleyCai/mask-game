@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://m0u0tamndm2i"
+path="res://.godot/imported/jumping.ogg-75a5404bfb0a36269c22c18b57ad0d06.oggvorbisstr"
+
+[deps]
+
+source_file="res://sound/Liminal_OS_sfx/ambiant/triggered by something/jumping.ogg"
+dest_files=["res://.godot/imported/jumping.ogg-75a5404bfb0a36269c22c18b57ad0d06.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cywfoxxs4rw3f"
+path="res://.godot/imported/PA_system_speaking2.ogg-203f4b01ad221d14f736944b4af074db.oggvorbisstr"
+
+[deps]
+
+source_file="res://sound/Liminal_OS_sfx/unique effects/PA_system_speaking2.ogg"
+dest_files=["res://.godot/imported/PA_system_speaking2.ogg-203f4b01ad221d14f736944b4af074db.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

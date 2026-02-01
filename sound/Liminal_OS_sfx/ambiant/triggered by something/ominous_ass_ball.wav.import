@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bd12nq0mhdjoh"
+path="res://.godot/imported/ominous_ass_ball.wav-2666187887fe0615413f1b892d3f6b00.sample"
+
+[deps]
+
+source_file="res://sound/Liminal_OS_sfx/ambiant/triggered by something/ominous_ass_ball.wav"
+dest_files=["res://.godot/imported/ominous_ass_ball.wav-2666187887fe0615413f1b892d3f6b00.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
