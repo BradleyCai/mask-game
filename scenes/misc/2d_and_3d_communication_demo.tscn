@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_gs1ds"]
 [ext_resource type="PackedScene" uid="uid://kfm2wy2udp45" path="res://scenes/computer/computer_and_cart.tscn" id="2_hpffr"]
 [ext_resource type="Shader" uid="uid://ear70vgi465g" path="res://shaders/VHS.gdshader" id="3_26bwt"]
-[ext_resource type="PackedScene" uid="uid://c0sayalrwngb4" path="res://scenes/computer/mouse_ray.tscn" id="3_anfke"]
+[ext_resource type="PackedScene" uid="uid://cq7cubtlrmi05" path="res://scenes/computer/mouse_ray.tscn" id="3_anfke"]
 [ext_resource type="Shader" uid="uid://biv5h5mcp73uy" path="res://shaders/TV.gdshader" id="5_hwutd"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_giuna"]
@@ -124,7 +124,7 @@ transform = Transform3D(-0.99813694, -2.6669893e-09, -0.0610136, 2.6669893e-09, 
 mesh = SubResource("SphereMesh_ps4jx")
 
 [node name="MouseRay" parent="." unique_id=1110644558 instance=ExtResource("3_anfke")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8010254, 31.280197, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8010254, -0.77061796, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1885285551]
 

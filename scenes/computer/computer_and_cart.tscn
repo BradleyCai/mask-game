@@ -2,13 +2,7 @@
 
 [ext_resource type="Script" uid="uid://0wdd7pxn2i7s" path="res://scenes/misc/computer_and_cart.gd" id="1_hplv3"]
 [ext_resource type="PackedScene" uid="uid://b7nkm5t0cqpkg" path="res://shared/assets/3d/glb/computer_and_cart.glb" id="2_rp7uj"]
-[ext_resource type="ArrayMesh" uid="uid://imyfqko5kt77" path="res://shared/assets/3d/glb/screen.res" id="3_2hh5w"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_2hh5w"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bpwd2"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_2hh5w")
+[ext_resource type="ArrayMesh" uid="uid://d0qgei336uwtx" path="res://shared/assets/3d/glb/screen.res" id="3_2hh5w"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_2hh5w"]
 resource_local_to_scene = true
@@ -20,7 +14,6 @@ _surfaces = [{
 "index_count": 432,
 "index_data": PackedByteArray("OQAlACQAJwAlADkAJwA5ACYAJAA6ADkAOgAmADkAOgAkACIAOgAjACYAOgAiADsAPAAjADoAOwA8ADoAPAAhACMAOwAiAAkAPQAhADwAPQAgACEAOwA4ADwAOAA9ADwAHwAgAD0APgA4ADsAOwAJAD4APgAJAAgAHwA9AD8AGwAfAD8AOAA3AD0ANwA/AD0APgA2ADgANgA3ADgAPgAIAEAAQAA2AD4AQAAIAAcAGwA/AEEAGAAbAEEANwBCAD8AQgBBAD8ANgA0ADcANABCADcAQAA1ADYANQA0ADYAQAAHAEMAQwA1AEAAQwAHAAQANQAxADQAQwApADUAKQAxADUAQwAEAEQARAApAEMAMQBFADQANABFAEIABABGAEQARAAoACkARgAoAEQAKQArADEAKAArACkAMQBHAEUAKwBHADEARQBIAEIAQgBIAEEARwAyAEUARQAyAEgAKwBJAEcAKABKACsASgBJACsASwBKACgARgBLACgARwAvADIASQAvAEcABQBLAEYAAAAFAEYABQAGAEsAAABGAEwABABMAEYAAwAAAEwATAAEAAEAAwBMAAIATAABAAIABgBNAEsASwBNAEoABgALAE0ATQBOAEoASgBOAEkACwBPAE0ATQBPAE4ACwAMAE8ATgBQAEkASQBQAC8ATwAqAE4ATgAqAFAADABRAE8ATwBRACoADAANAFEADQBSAFEADQAOAFIAUQAsACoAUQBSACwAKgAtAFAAKgAsAC0ADgBTAFIADgAQAFMAUgBUACwAUgBTAFQALABVAC0ALABUAFUAUwAPAFQADwBVAFQAUwARAA8ADwAKAFUAEQBTAFYAEABWAFMAVgASABEAEAATAFYAVgAUABIAVgATABQACgBXAFUALQBVAFcACgAVAFcALQBXAC4AUAAtAC4AUAAuAC8AFQBYAFcALgBXAFgAFQAWAFgAWAAWABcALwAuADAALgBYADAALwAwADIAWAAXAFkAMABYAFkAFwBaAFkAMgAwADMAMABZADMAMwBZAFoAMgAzAEgAWgAXABoASAAzAFsAMwBaAFsASABbAEEAGABBAFsAGQAYAFsAGQBbAFoAHQAZAFoAWgAaAFwAHQBaAFwAHABcABoAXAAeAB0AXAAcAB4A"),
 "lods": [0.0076301154, PackedByteArray("AAABAAIAAwAAAAIAAAAEAAEABAAAAAUABQAoAAQABQAGACgABgALACgABAAoACkABAApAAcACwAqACgACwAMACoADAANACoAKAAqACsAKAArACkADQAsACoADQAOACwADgAPACwADgAQAA8AEAARAA8AEQAQABIAEAATABIAEgATABQALAAPAAoAKgAsAC0ALAAKAC0AKgAtACsALQAKABUALQAVAC4ALgAVABYAKwAtAC8ALQAuAC8ALgAWADAALwAuADAAMAAWABcAKwAvADEAKQArADEALwAwADIAMQAvADIAMAAXADMAMgAwADMAMQAyADQANAAyADMAKQAxADUANQAxADQABwApADUABwA1AAgACAA1ADYANQA0ADYACAA2AAkANgA0ADcANAAzADcACQA2ADgANgA3ADgACQA4ACIANwAzABsAMwAYABsANwAbAB8ANwAfACAAOAA3ACAAOAAgACEAIgA4ACEAIgAhACMAIwAkACIAJAAjACUAIwAmACUAJwAlACYAMwAZABgAMwAXABkAGQAXABoAGQAaABwAHQAZABwAHAAeAB0A"), 0.12920986, PackedByteArray("AAABAAIAAwAAAAIAAAAEAAEABAAAAAUABQAGAAQABAAGAAcABwAGAAgACAAGAAkABgAKAAkACwAKAAYACwAMAAoADAANAAoADQAOAAoADgAPAAoADgAQAA8AEAARAA8AEQAQABIAEAATABIAEgATABQACgAVAAkACQAVABYACQAWABcACQAXABgAGAAXABkAGQAXABoACQAYABsAGQAaABwAHQAZABwAHAAeAB0ACQAbAB8ACQAfACAACQAgACEAIgAJACEAIgAhACMAIwAkACIAJAAjACUAIwAmACUAJwAlACYA")],
-"material": SubResource("StandardMaterial3D_bpwd2"),
 "name": "computer_screen",
 "primitive": 3,
 "uv_scale": Vector4(1.9999999, 2, 0, 0),
@@ -33,7 +26,7 @@ blend_shape_mode = 0
 size = Vector3(0.305, 0.305, 0.1134419)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bpwd2"]
-size = Vector3(1.5615997, 1.4447327, 1.4376831)
+size = Vector3(1.5615997, 2.2980728, 1.4376831)
 
 [node name="ComputerAndCart" type="Node3D" unique_id=104138633 node_paths=PackedStringArray("screen_mesh", "player_view_position", "screen_area", "shape")]
 script = ExtResource("1_hplv3")
@@ -47,7 +40,7 @@ transform = Transform3D(0.18, 0, 0, 0, 0.18, 0, 0, 0, 0.18, 0, 1.3157625, 0)
 
 [node name="computer_and_cart" parent="Node3D" unique_id=723810771 instance=ExtResource("2_rp7uj")]
 
-[node name="Screen" parent="Node3D/computer_and_cart" index="2" unique_id=1335317907]
+[node name="Screen" parent="Node3D/computer_and_cart" index="2" unique_id=2139090868]
 visible = false
 mesh = SubResource("ArrayMesh_2hh5w")
 
@@ -55,7 +48,7 @@ mesh = SubResource("ArrayMesh_2hh5w")
 mesh = ExtResource("3_2hh5w")
 
 [node name="PlayerViewPosition" type="Node3D" parent="." unique_id=895917849]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0063735396, -0.020561729, 0.45200515)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0063735396, -0.020561729, 0.66030025)
 
 [node name="ScreenArea" type="Area3D" parent="." unique_id=175358670]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3159131, 0.12724939)
@@ -70,7 +63,7 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea" unique_id=676534540]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008613586, 0.7653961, 0.47329712)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008613586, 1.1920662, 0.47329712)
 shape = SubResource("BoxShape3D_bpwd2")
 
 [connection signal="input_event" from="ScreenArea" to="." method="_on_screen_area_input_event"]
