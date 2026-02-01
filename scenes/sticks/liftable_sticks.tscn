@@ -1,0 +1,2486 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxbw2hi0uyj4c"]
+
+[ext_resource type="Script" uid="uid://b6ao1u42q3u5e" path="res://scenes/sticks/sticks_2.gd" id="1_dp6nq"]
+[ext_resource type="Script" uid="uid://bx5sw2bvdtggf" path="res://scenes/sticks/ball.gd" id="2_e4qf5"]
+
+[sub_resource type="Curve" id="Curve_dp6nq"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1e-05, 0.51586205), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="BoxMesh" id="BoxMesh_a202f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4xowi"]
+size = Vector3(0.19999993, 2, 0.19999993)
+
+[node name="sticks2" type="Node3D"]
+script = ExtResource("1_dp6nq")
+ball_path = NodePath("ball")
+falloff = SubResource("Curve_dp6nq")
+
+[node name="stick_thing" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8751521, 0.10874045, 3.9155688)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing2" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6514645, 0.10874045, 3.9155688)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing2"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing2"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing3" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4173889, 0.10874045, 3.9155688)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing3"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing3"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing4" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.185031, 0.10874045, 3.9155688)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing4"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing4"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing5" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95757717, 0.10874045, 3.9155688)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing5"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing5"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing6" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7221015, 0.10874045, 3.9155688)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing6"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing6"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing7" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47901767, 0.10874045, 3.9155688)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing7"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing7"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing8" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24828452, 0.10874045, 3.9155688)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing8"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing8"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing9" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8751521, 0.10874045, 3.6697884)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing9"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing9"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing10" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6514645, 0.10874045, 3.6697884)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing10"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing10"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing11" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4173889, 0.10874045, 3.6697884)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing11"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing11"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing12" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.185031, 0.10874045, 3.6697884)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing12"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing12"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing13" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95757717, 0.10874045, 3.6697884)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing13"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing13"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing14" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7221015, 0.10874045, 3.6697884)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing14"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing14"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing15" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47901767, 0.10874045, 3.6697884)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing15"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing15"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing16" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24828452, 0.10874045, 3.6697884)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing16"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing16"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing17" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8751521, 0.10874045, 3.4266596)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing17"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing17"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing18" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6514645, 0.10874045, 3.4266596)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing18"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing18"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing19" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4173889, 0.10874045, 3.4266596)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing19"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing19"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing20" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.185031, 0.10874045, 3.4266596)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing20"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing20"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing21" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95757717, 0.10874045, 3.4266596)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing21"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing21"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing22" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7221015, 0.10874045, 3.4266596)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing22"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing22"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing23" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47901767, 0.10874045, 3.4266596)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing23"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing23"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing24" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24828452, 0.10874045, 3.4266596)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing24"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing24"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing25" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8751521, 0.10874045, 3.1896544)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing25"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing25"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing26" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6514645, 0.10874045, 3.1896544)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing26"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing26"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing27" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4173889, 0.10874045, 3.1896544)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing27"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing27"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing28" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.185031, 0.10874045, 3.1896544)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing28"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing28"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing29" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95757717, 0.10874045, 3.1896544)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing29"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing29"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing30" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7221015, 0.10874045, 3.1896544)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing30"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing30"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing31" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47901767, 0.10874045, 3.1896544)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing31"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing31"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing32" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24828452, 0.10874045, 3.1896544)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing32"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing32"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing33" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8751521, 0.10874045, 2.9597516)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing33"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing33"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing34" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6514645, 0.10874045, 2.9597516)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing34"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing34"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing35" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4173889, 0.10874045, 2.9597516)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing35"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing35"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing36" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.185031, 0.10874045, 2.9597516)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing36"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing36"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing37" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95757717, 0.10874045, 2.9597516)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing37"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing37"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing38" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7221015, 0.10874045, 2.9597516)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing38"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing38"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing39" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47901767, 0.10874045, 2.9597516)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing39"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing39"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing40" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24828452, 0.10874045, 2.9597516)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing40"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing40"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing41" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8751521, 0.10874045, 2.7244072)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing41"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing41"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing42" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6514645, 0.10874045, 2.7244072)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing42"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing42"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing43" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4173889, 0.10874045, 2.7244072)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing43"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing43"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing44" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.185031, 0.10874045, 2.7244072)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing44"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing44"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing45" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95757717, 0.10874045, 2.7244072)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing45"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing45"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing46" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7221015, 0.10874045, 2.7244072)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing46"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing46"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing47" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47901767, 0.10874045, 2.7244072)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing47"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing47"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing48" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24828452, 0.10874045, 2.7244072)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing48"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing48"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing49" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8751521, 0.10874045, 2.4860175)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing49"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing49"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing50" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6514645, 0.10874045, 2.4860175)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing50"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing50"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing51" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4173889, 0.10874045, 2.4860175)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing51"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing51"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing52" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.185031, 0.10874045, 2.4860175)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing52"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing52"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing53" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95757717, 0.10874045, 2.4860175)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing53"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing53"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing54" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7221015, 0.10874045, 2.4860175)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing54"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing54"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing55" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47901767, 0.10874045, 2.4860175)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing55"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing55"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing56" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24828452, 0.10874045, 2.4860175)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing56"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing56"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing57" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8751521, 0.10874045, 2.2495232)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing57"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing57"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing58" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6514645, 0.10874045, 2.2495232)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing58"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing58"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing59" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4173889, 0.10874045, 2.2495232)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing59"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing59"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing60" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.185031, 0.10874045, 2.2495232)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing60"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing60"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing61" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95757717, 0.10874045, 2.2495232)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing61"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing61"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing62" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7221015, 0.10874045, 2.2495232)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing62"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing62"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing63" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47901767, 0.10874045, 2.2495232)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing63"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing63"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing64" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24828452, 0.10874045, 2.2495232)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing64"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing64"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing65" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8751521, 0.10874045, 2.0037427)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing65"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing65"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing66" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6514645, 0.10874045, 2.0037427)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing66"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing66"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing67" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4173889, 0.10874045, 2.0037427)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing67"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing67"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing68" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.185031, 0.10874045, 2.0037427)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing68"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing68"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing69" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95757717, 0.10874045, 2.0037427)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing69"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing69"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing70" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7221015, 0.10874045, 2.0037427)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing70"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing70"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing71" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47901767, 0.10874045, 2.0037427)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing71"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing71"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing72" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24828452, 0.10874045, 2.0037427)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing72"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing72"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing73" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8751521, 0.10874045, 1.7606139)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing73"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing73"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing74" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6514645, 0.10874045, 1.7606139)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing74"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing74"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing75" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4173889, 0.10874045, 1.7606139)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing75"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing75"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing76" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.185031, 0.10874045, 1.7606139)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing76"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing76"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing77" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95757717, 0.10874045, 1.7606139)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing77"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing77"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing78" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7221015, 0.10874045, 1.7606139)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing78"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing78"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing79" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47901767, 0.10874045, 1.7606139)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing79"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing79"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing80" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24828452, 0.10874045, 1.7606139)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing80"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing80"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing81" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8751521, 0.10874045, 1.5236087)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing81"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing81"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing82" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6514645, 0.10874045, 1.5236087)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing82"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing82"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing83" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4173889, 0.10874045, 1.5236087)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing83"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing83"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing84" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.185031, 0.10874045, 1.5236087)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing84"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing84"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing85" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95757717, 0.10874045, 1.5236087)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing85"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing85"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing86" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7221015, 0.10874045, 1.5236087)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing86"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing86"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing87" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47901767, 0.10874045, 1.5236087)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing87"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing87"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing88" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24828452, 0.10874045, 1.5236087)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing88"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing88"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing89" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8751521, 0.10874045, 1.2937059)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing89"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing89"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing90" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6514645, 0.10874045, 1.2937059)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing90"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing90"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing91" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4173889, 0.10874045, 1.2937059)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing91"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing91"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing92" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.185031, 0.10874045, 1.2937059)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing92"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing92"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing93" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95757717, 0.10874045, 1.2937059)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing93"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing93"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing94" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7221015, 0.10874045, 1.2937059)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing94"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing94"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing95" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47901767, 0.10874045, 1.2937059)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing95"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing95"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing96" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24828452, 0.10874045, 1.2937059)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing96"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing96"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing97" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8751521, 0.10874045, 1.0583615)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing97"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing97"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing98" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6514645, 0.10874045, 1.0583615)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing98"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing98"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing99" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4173889, 0.10874045, 1.0583615)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing99"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing99"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing100" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.185031, 0.10874045, 1.0583615)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing100"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing100"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing101" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95757717, 0.10874045, 1.0583615)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing101"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing101"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing102" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7221015, 0.10874045, 1.0583615)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing102"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing102"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing103" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47901767, 0.10874045, 1.0583615)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing103"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing103"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing104" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24828452, 0.10874045, 1.0583615)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing104"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing104"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing105" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8751521, 0.10874045, 0.8199718)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing105"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing105"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing106" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6514645, 0.10874045, 0.8199718)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing106"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing106"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing107" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4173889, 0.10874045, 0.8199718)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing107"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing107"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing108" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.185031, 0.10874045, 0.8199718)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing108"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing108"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing109" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95757717, 0.10874045, 0.8199718)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing109"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing109"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing110" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7221015, 0.10874045, 0.8199718)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing110"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing110"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing111" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47901767, 0.10874045, 0.8199718)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing111"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing111"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing112" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24828452, 0.10874045, 0.8199718)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing112"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing112"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing113" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8751521, 0.10874045, 0.57419205)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing113"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing113"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing114" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6514645, 0.10874045, 0.57419205)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing114"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing114"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing115" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4173889, 0.10874045, 0.57419205)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing115"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing115"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing116" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.185031, 0.10874045, 0.57419205)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing116"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing116"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing117" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95757717, 0.10874045, 0.57419205)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing117"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing117"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing118" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7221015, 0.10874045, 0.57419205)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing118"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing118"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing119" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47901767, 0.10874045, 0.57419205)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing119"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing119"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing120" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24828452, 0.10874045, 0.57419205)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing120"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing120"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing121" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8751521, 0.10874045, 0.32841158)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing121"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing121"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing122" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6514645, 0.10874045, 0.32841158)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing122"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing122"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing123" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4173889, 0.10874045, 0.32841158)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing123"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing123"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing124" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.185031, 0.10874045, 0.32841158)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing124"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing124"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing125" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95757717, 0.10874045, 0.32841158)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing125"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing125"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing126" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7221015, 0.10874045, 0.32841158)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing126"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing126"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing127" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47901767, 0.10874045, 0.32841158)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing127"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing127"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing128" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24828452, 0.10874045, 0.32841158)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing128"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing128"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing129" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8751521, 0.10874045, 0.0852828)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing129"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing129"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing130" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6514645, 0.10874045, 0.0852828)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing130"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing130"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing131" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4173889, 0.10874045, 0.0852828)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing131"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing131"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing132" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.185031, 0.10874045, 0.0852828)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing132"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing132"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing133" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95757717, 0.10874045, 0.0852828)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing133"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing133"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing134" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7221015, 0.10874045, 0.0852828)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing134"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing134"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing135" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47901767, 0.10874045, 0.0852828)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing135"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing135"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing136" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24828452, 0.10874045, 0.0852828)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing136"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing136"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing137" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8751521, 0.10874045, -0.15172243)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing137"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing137"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing138" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6514645, 0.10874045, -0.15172243)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing138"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing138"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing139" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4173889, 0.10874045, -0.15172243)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing139"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing139"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing140" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.185031, 0.10874045, -0.15172243)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing140"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing140"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing141" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95757717, 0.10874045, -0.15172243)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing141"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing141"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing142" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7221015, 0.10874045, -0.15172243)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing142"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing142"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing143" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47901767, 0.10874045, -0.15172243)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing143"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing143"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing144" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24828452, 0.10874045, -0.15172243)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing144"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing144"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing145" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8751521, 0.10874045, -0.38162518)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing145"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing145"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing146" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6514645, 0.10874045, -0.38162518)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing146"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing146"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing147" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4173889, 0.10874045, -0.38162518)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing147"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing147"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing148" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.185031, 0.10874045, -0.38162518)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing148"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing148"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing149" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95757717, 0.10874045, -0.38162518)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing149"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing149"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing150" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7221015, 0.10874045, -0.38162518)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing150"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing150"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing151" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47901767, 0.10874045, -0.38162518)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing151"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing151"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing152" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24828452, 0.10874045, -0.38162518)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing152"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing152"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing153" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8751521, 0.10874045, -0.6169696)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing153"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing153"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing154" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6514645, 0.10874045, -0.6169696)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing154"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing154"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing155" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4173889, 0.10874045, -0.6169696)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing155"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing155"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing156" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.185031, 0.10874045, -0.6169696)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing156"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing156"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing157" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95757717, 0.10874045, -0.6169696)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing157"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing157"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing158" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7221015, 0.10874045, -0.6169696)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing158"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing158"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing159" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47901767, 0.10874045, -0.6169696)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing159"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing159"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing160" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24828452, 0.10874045, -0.6169696)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing160"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing160"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing161" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8751521, 0.10874045, -0.8553593)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing161"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing161"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing162" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6514645, 0.10874045, -0.8553593)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing162"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing162"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing163" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4173889, 0.10874045, -0.8553593)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing163"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing163"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing164" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.185031, 0.10874045, -0.8553593)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing164"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing164"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing165" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95757717, 0.10874045, -0.8553593)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing165"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing165"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing166" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7221015, 0.10874045, -0.8553593)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing166"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing166"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing167" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47901767, 0.10874045, -0.8553593)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing167"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing167"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing168" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24828452, 0.10874045, -0.8553593)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing168"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing168"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing169" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8751521, 0.10874045, -1.1059208)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing169"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing169"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing170" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6514645, 0.10874045, -1.1059208)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing170"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing170"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing171" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4173889, 0.10874045, -1.1059208)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing171"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing171"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing172" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.185031, 0.10874045, -1.1059208)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing172"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing172"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing173" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95757717, 0.10874045, -1.1059208)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing173"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing173"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing174" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7221015, 0.10874045, -1.1059208)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing174"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing174"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing175" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47901767, 0.10874045, -1.1059208)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing175"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing175"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing176" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24828452, 0.10874045, -1.1059208)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing176"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing176"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing177" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8751521, 0.10874045, -1.3517013)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing177"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing177"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing178" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6514645, 0.10874045, -1.3517013)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing178"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing178"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing179" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4173889, 0.10874045, -1.3517013)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing179"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing179"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing180" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.185031, 0.10874045, -1.3517013)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing180"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing180"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing181" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95757717, 0.10874045, -1.3517013)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing181"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing181"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing182" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7221015, 0.10874045, -1.3517013)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing182"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing182"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing183" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47901767, 0.10874045, -1.3517013)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing183"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing183"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing184" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24828452, 0.10874045, -1.3517013)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing184"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing184"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing185" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8751521, 0.10874045, -1.59483)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing185"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing185"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing186" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6514645, 0.10874045, -1.59483)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing186"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing186"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing187" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4173889, 0.10874045, -1.59483)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing187"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing187"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing188" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.185031, 0.10874045, -1.59483)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing188"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing188"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing189" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95757717, 0.10874045, -1.59483)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing189"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing189"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing190" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7221015, 0.10874045, -1.59483)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing190"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing190"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing191" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47901767, 0.10874045, -1.59483)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing191"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing191"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing192" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24828452, 0.10874045, -1.59483)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing192"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing192"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing193" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8751521, 0.10874045, -1.8318353)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing193"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing193"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing194" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6514645, 0.10874045, -1.8318353)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing194"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing194"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing195" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4173889, 0.10874045, -1.8318353)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing195"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing195"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing196" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.185031, 0.10874045, -1.8318353)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing196"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing196"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing197" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95757717, 0.10874045, -1.8318353)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing197"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing197"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing198" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7221015, 0.10874045, -1.8318353)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing198"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing198"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing199" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47901767, 0.10874045, -1.8318353)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing199"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing199"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing200" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24828452, 0.10874045, -1.8318353)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing200"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing200"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing201" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8751521, 0.10874045, -2.061738)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing201"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing201"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing202" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6514645, 0.10874045, -2.061738)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing202"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing202"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing203" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4173889, 0.10874045, -2.061738)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing203"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing203"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing204" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.185031, 0.10874045, -2.061738)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing204"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing204"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing205" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95757717, 0.10874045, -2.061738)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing205"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing205"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing206" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7221015, 0.10874045, -2.061738)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing206"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing206"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing207" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47901767, 0.10874045, -2.061738)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing207"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing207"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing208" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24828452, 0.10874045, -2.061738)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing208"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing208"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing209" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8751521, 0.10874045, -2.2970824)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing209"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing209"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing210" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6514645, 0.10874045, -2.2970824)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing210"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing210"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing211" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4173889, 0.10874045, -2.2970824)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing211"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing211"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing212" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.185031, 0.10874045, -2.2970824)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing212"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing212"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing213" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95757717, 0.10874045, -2.2970824)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing213"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing213"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing214" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7221015, 0.10874045, -2.2970824)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing214"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing214"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing215" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47901767, 0.10874045, -2.2970824)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing215"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing215"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing216" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24828452, 0.10874045, -2.2970824)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing216"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing216"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing217" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8751521, 0.10874045, -2.5354722)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing217"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing217"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing218" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6514645, 0.10874045, -2.5354722)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing218"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing218"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing219" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4173889, 0.10874045, -2.5354722)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing219"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing219"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing220" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.185031, 0.10874045, -2.5354722)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing220"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing220"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing221" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.95757717, 0.10874045, -2.5354722)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing221"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing221"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing222" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7221015, 0.10874045, -2.5354722)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing222"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing222"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing223" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47901767, 0.10874045, -2.5354722)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing223"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing223"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="stick_thing224" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24828452, 0.10874045, -2.5354722)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="stick_thing224"]
+transform = Transform3D(0.19999993, 0, 0, 0, 2, 0, 0, 0, 0.19999993, 0, -0.010070562, 0)
+mesh = SubResource("BoxMesh_a202f")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stick_thing224"]
+shape = SubResource("BoxShape3D_4xowi")
+
+[node name="ball" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.047857, 0, 0.14524317)
+script = ExtResource("2_e4qf5")
