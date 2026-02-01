@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://l78a7iasobh4"]
+[gd_scene load_steps=17 format=3 uid="uid://l78a7iasobh4"]
 
 [ext_resource type="Texture2D" uid="uid://bk0vpa3n74vx5" path="res://shared/assets/images/debug/orange.png" id="1_alvx4"]
 [ext_resource type="Texture2D" uid="uid://cpmxigxpqfx1a" path="res://shared/assets/images/debug/dark.png" id="2_3nb0h"]
@@ -52,67 +52,67 @@ shader_parameter/scalinesOpt = 0.8
 shader_parameter/rgbOffsetOpt = 0.2
 shader_parameter/horzFuzzOpt = 0.15
 
-[node name="Node3D" type="Node3D" unique_id=1708574596]
+[node name="Node3D" type="Node3D"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1289638873]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_eklv6")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1809365791]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="wall" type="CSGCombiner3D" parent="." unique_id=2094516682]
+[node name="wall" type="CSGCombiner3D" parent="."]
 material_override = SubResource("StandardMaterial3D_lo0ai")
 use_collision = true
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="wall" unique_id=960529195]
+[node name="CSGBox3D2" type="CSGBox3D" parent="wall"]
 size = Vector3(3, 10, 20)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="wall" unique_id=124380760]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="wall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.484962, 0)
 operation = 2
 radius = 2.5
 height = 10.0
 sides = 20
 
-[node name="ground" type="MeshInstance3D" parent="." unique_id=2129216718]
+[node name="ground" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_yop8q")
 mesh = SubResource("PlaneMesh_slrhr")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="ground" unique_id=1927292219]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground/StaticBody3D" unique_id=445750144]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_hxags")
 
-[node name="ground2" type="MeshInstance3D" parent="." unique_id=2106371865]
+[node name="ground2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0)
 material_override = SubResource("StandardMaterial3D_yop8q")
 mesh = SubResource("PlaneMesh_slrhr")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="ground2" unique_id=1257614220]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground2/StaticBody3D" unique_id=2114430554]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_hxags")
 
-[node name="Character" parent="." unique_id=1730607155 instance=ExtResource("3_6lg67")]
+[node name="Character" parent="." instance=ExtResource("3_6lg67")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.8421545, 0, 0)
 in_air_momentum = false
 
-[node name="ComputerAndCart" parent="." unique_id=104138633 node_paths=PackedStringArray("viewport") instance=ExtResource("4_3nb0h")]
+[node name="ComputerAndCart" parent="." node_paths=PackedStringArray("viewport") instance=ExtResource("4_3nb0h")]
 transform = Transform3D(2.9802322e-08, 0, -1, 0, 1, 0, 1, 0, 2.9802322e-08, -8.511381, 0.06630123, 0.14222479)
 viewport = NodePath("../SubViewport")
 
-[node name="SubViewport" type="SubViewport" parent="." unique_id=2127501373]
+[node name="SubViewport" type="SubViewport" parent="."]
 
-[node name="ViewportCamera" type="Camera3D" parent="SubViewport" unique_id=2054586143]
+[node name="ViewportCamera" type="Camera3D" parent="SubViewport"]
 transform = Transform3D(1.1924881e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, -1.1924881e-08, -5.2125306e-16, 0, 10, 0.709)
 cull_mask = 2
 projection = 1
 size = 14.958
 
-[node name="CanvasLayer" type="CanvasLayer" parent="SubViewport" unique_id=1520964427]
+[node name="CanvasLayer" type="CanvasLayer" parent="SubViewport"]
 
-[node name="ColorRect" type="ColorRect" parent="SubViewport/CanvasLayer" unique_id=1618766608]
+[node name="ColorRect" type="ColorRect" parent="SubViewport/CanvasLayer"]
 material = SubResource("ShaderMaterial_qdai8")
 anchors_preset = 15
 anchor_right = 1.0
@@ -120,15 +120,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MouseRay" parent="." unique_id=1110644558 instance=ExtResource("5_6lg67")]
+[node name="MouseRay" parent="." instance=ExtResource("5_6lg67")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.484962, 0)
 
-[node name="RemoteTransform3D" type="RemoteTransform3D" parent="MouseRay" unique_id=1205610183]
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="MouseRay"]
 remote_path = NodePath("../../wall/CSGCylinder3D")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=425420937]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=112609305]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_6jfgp")
 anchors_preset = 15
 anchor_right = 1.0

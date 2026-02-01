@@ -6,6 +6,7 @@ extends Node3D
 @export var player_view_position : Node3D
 @export var screen_area : Area3D
 @export var shape : CollisionShape3D
+@export var mouse_ray : MouseRay
 
 var box_size : Vector2
 var last_poll_pressed : bool = false
@@ -34,7 +35,7 @@ func _on_screen_area_input_event(camera: Node, event: InputEvent, event_position
 		var viewport_size := Vector2(viewport.size)
 		var viewport_position : Vector2 = relative_2d * viewport_size
 		var projected_camera_position : Vector3 = viewport_cam.project_position(viewport_position, viewport_cam.global_position.y)
-		Signals.move_mask_to_world_point_requested.emit(projected_camera_position)
+		mouse_ray.move_mask_to_world_point(projected_camera_position)
 	
 	if event.is_action("interact"):
 		if event.is_pressed():
