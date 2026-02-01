@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://3sl10epbswwf"]
+
+[ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_gs1ds"]
+[ext_resource type="PackedScene" uid="uid://kfm2wy2udp45" path="res://scenes/computer/computer_and_cart.tscn" id="2_hpffr"]
+[ext_resource type="PackedScene" uid="uid://cimnuf8w5g66b" path="res://scenes/masks/pillar.tscn" id="3_anfke"]
+[ext_resource type="Script" uid="uid://cma57a7whdr8g" path="res://scenes/computer/mouse_ray.gd" id="4_26bwt"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_giuna"]
+size = Vector3(20, 1, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gs1ds"]
+size = Vector3(20, 1, 20)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gs1ds"]
+
+[sub_resource type="Sky" id="Sky_hpffr"]
+sky_material = SubResource("ProceduralSkyMaterial_gs1ds")
+
+[sub_resource type="Environment" id="Environment_gs1ds"]
+background_mode = 2
+sky = SubResource("Sky_hpffr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hpffr"]
+albedo_color = Color(0, 1, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_anfke"]
+material = SubResource("StandardMaterial3D_hpffr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_26bwt"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_hwutd"]
+material = SubResource("StandardMaterial3D_26bwt")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bpb7l"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_vgck2"]
+material = SubResource("StandardMaterial3D_bpb7l")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_inao6"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ps4jx"]
+material = SubResource("StandardMaterial3D_inao6")
+
+[node name="Main" type="Node3D" unique_id=1726885371]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=614280056]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.45447862, 0)
+mesh = SubResource("BoxMesh_giuna")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=2053744039]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=121741105]
+shape = SubResource("BoxShape3D_gs1ds")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1993253622]
+environment = SubResource("Environment_gs1ds")
+
+[node name="Character" parent="." unique_id=175289279 instance=ExtResource("1_gs1ds")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.8421545, 0, 0)
+in_air_momentum = false
+
+[node name="ComputerAndCart" parent="." unique_id=104138633 node_paths=PackedStringArray("viewport", "character") instance=ExtResource("2_hpffr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14122486, 0.0663017, 1.2513556)
+viewport = NodePath("../SubViewport")
+character = NodePath("../Character")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=664133499]
+
+[node name="ViewportCamera" type="Camera3D" parent="SubViewport" unique_id=1844864025]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10, 0.709)
+cull_mask = 2
+projection = 1
+size = 14.958
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1031360916]
+transform = Transform3D(1, 0, 0, 0, 0.056431416, 0.99840647, 0, -0.99840647, 0.056431416, 0, 17.648159, 0)
+
+[node name="TestNodes" type="Node3D" parent="." unique_id=408174393]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestNodes" unique_id=925825256]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7967005, 0.35063636, -3.3533425)
+mesh = SubResource("SphereMesh_anfke")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="TestNodes" unique_id=1571771580]
+transform = Transform3D(-0.99813694, -2.6669893e-09, -0.0610136, 2.6669893e-09, 1, -8.734134e-08, 0.0610136, -8.734134e-08, -0.99813694, -6.5926075, 0.35063636, -3.669817)
+mesh = SubResource("SphereMesh_hwutd")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="TestNodes" unique_id=794783429]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4324846, 0.35063636, 5.6389694)
+mesh = SubResource("SphereMesh_vgck2")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="TestNodes" unique_id=593526685]
+transform = Transform3D(-0.99813694, -2.6669893e-09, -0.0610136, 2.6669893e-09, 1, -8.734134e-08, 0.0610136, -8.734134e-08, -0.99813694, -4.8337817, 0.35063636, 5.424329)
+mesh = SubResource("SphereMesh_ps4jx")
+
+[node name="MouseRay" type="RayCast3D" parent="." unique_id=929385396]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8010254, 31.280197, 0)
+target_position = Vector3(0, -50, 0)
+collision_mask = 2
+script = ExtResource("4_26bwt")
+
+[node name="Pillar" parent="MouseRay" unique_id=302520146 instance=ExtResource("3_anfke")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -28.27, 0)

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cimnuf8w5g66b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_11xiq"]
+transparency = 1
+albedo_color = Color(0, 0, 0, 0.5529412)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_llj28"]
+material = SubResource("StandardMaterial3D_11xiq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_llj28"]
+transparency = 1
+albedo_color = Color(0.48235294, 1, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_lcmg4"]
+material = SubResource("StandardMaterial3D_llj28")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_11xiq"]
+
+[node name="Pillar" type="Node3D" unique_id=302520146]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1631213404]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("CylinderMesh_llj28")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1839802309]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+layers = 2
+mesh = SubResource("CylinderMesh_lcmg4")
+
+[node name="SelectArea" type="Area3D" parent="." unique_id=1173826589]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+collision_layer = 2
+collision_mask = 0
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SelectArea" unique_id=327592469]
+shape = SubResource("CylinderShape3D_11xiq")

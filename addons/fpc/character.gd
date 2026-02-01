@@ -2,8 +2,15 @@
 # MIT license
 # Quality Godot First Person Controller v2
 
-
+class_name Character
 extends CharacterBody3D
+
+enum CharacterState {
+	DEFAULT = 0,
+	AT_COMPUTER = 1,
+}
+
+var _current_state : CharacterState = CharacterState.DEFAULT
 
 
 #region Character Export Group
@@ -168,6 +175,16 @@ func _process(_delta):
 
 
 func _physics_process(delta): # Most things happen here.
+
+	if _current_state == CharacterState.DEFAULT:
+		_physics_process_default_state(delta)
+	elif _current_state == CharacterState.AT_COMPUTER:
+		_physics_process_at_computer(delta)
+
+func _physics_process_at_computer(delta):
+	pass
+
+func _physics_process_default_state(delta):
 	# Gravity
 	if dynamic_gravity:
 		gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -205,6 +222,16 @@ func _physics_process(delta): # Most things happen here.
 #endregion
 
 #region Input Handling
+
+func _enter_state(new_state : CharacterState):
+	_current_state = new_state
+
+func enter_computer_view_mode(computer : ComputerAndCart):
+	global_transform = Transform3D(computer.player_view_position.global_transform)
+	HEAD.rotation_degrees.x = -25
+	HEAD.rotation_degrees.y = 270
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	_enter_state(CharacterState.AT_COMPUTER)
 
 func handle_jumping():
 	if jumping_enabled:

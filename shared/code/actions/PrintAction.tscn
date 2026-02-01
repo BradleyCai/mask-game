@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d0rr7a4xikg0d"]
+
+[sub_resource type="GDScript" id="GDScript_pneba"]
+resource_name = "PrintAction"
+script/source = "extends Action
+
+@export var print_message: String = \"PrintAction printed\"
+
+func run(trigger: Node) -> void:
+	var script: Variant = trigger.get_script()
+	var type_name: String
+	if script != null:
+		type_name = script.resource_name
+	else:
+		type_name = trigger.get_class()
+	print(\"{0}<{1}>#{2}: {3}\".format([trigger.name, type_name, trigger.get_instance_id(), print_message]))
+"
+
+[node name="PrintAction" type="Node" unique_id=398432398]
+script = SubResource("GDScript_pneba")

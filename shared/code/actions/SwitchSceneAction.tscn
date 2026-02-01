@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bp3sa06aifvp3"]
+
+[sub_resource type="GDScript" id="GDScript_4pdh4"]
+script/source = "extends Action
+
+@export_file(\"*.tscn\") var _scene: String = \"res://main.tscn\"
+
+func run(_trigger_node: Node) -> void:
+	# ResourceLoader.load_threaded_request(_scene)
+	# var scene := ResourceLoader.load_threaded_get(_scene) as PackedScene
+
+	self.get_tree().change_scene_to_file(_scene)
+"
+
+[node name="SwitchSceneAction" type="Node"]
+script = SubResource("GDScript_4pdh4")
