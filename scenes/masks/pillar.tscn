@@ -2,6 +2,7 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_11xiq"]
 transparency = 1
+cull_mode = 2
 albedo_color = Color(0, 0, 0, 0.5529412)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_llj28"]
