@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ckyx814hqlkoe"]
+[gd_scene load_steps=0 format=3 uid="uid://ckyx814hqlkoe"]
 
 [ext_resource type="PackedScene" uid="uid://dw8x5hm8r7w7w" path="res://scenes/room_shell/Door_V2(1).glb" id="1_qwasj"]
 [ext_resource type="Script" uid="uid://d3wjt4hjcxl1y" path="res://scenes/room_shell/sliding_door.gd" id="1_s2ulh"]
