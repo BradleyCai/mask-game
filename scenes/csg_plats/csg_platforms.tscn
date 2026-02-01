@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_sclr2"]
 [ext_resource type="PackedScene" uid="uid://kfm2wy2udp45" path="res://scenes/computer/computer_and_cart.tscn" id="4_lcih3"]
 [ext_resource type="PackedScene" uid="uid://cq7cubtlrmi05" path="res://scenes/computer/mouse_ray.tscn" id="5_gqyf1"]
-[ext_resource type="PackedScene" path="res://scenes/computer/computer_view_sub_viewport.tscn" id="5_lcih3"]
+[ext_resource type="PackedScene" uid="uid://nuv1t6k08cgl" path="res://scenes/computer/computer_view_sub_viewport.tscn" id="5_lcih3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o577s"]
 albedo_texture = ExtResource("1_513p7")
@@ -31,7 +31,7 @@ glow_enabled = true
 [node name="Node3D" type="Node3D"]
 
 [node name="ground" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.24611771, 0, 0, 0, 1, 0, 0, 0, 1, -7.6981335, 0, 0)
+transform = Transform3D(0.4157925, 0, 0, 0, 1, 0, 0, 0, 1, -9.620448, 0, 0)
 material_override = SubResource("StandardMaterial3D_o577s")
 mesh = SubResource("PlaneMesh_a7jg1")
 skeleton = NodePath("../CSGCombiner3D")
@@ -42,7 +42,7 @@ skeleton = NodePath("../CSGCombiner3D")
 shape = SubResource("ConcavePolygonShape3D_6xly2")
 
 [node name="ground2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.24611771, 0, 0, 0, 1, 0, 0, 0, 1, 5.560712, 0, 0)
+transform = Transform3D(0.24611771, 0, 0, 0, 1, 0, 0, 0, 1, 7.2671986, 0, 0)
 material_override = SubResource("StandardMaterial3D_o577s")
 mesh = SubResource("PlaneMesh_a7jg1")
 skeleton = NodePath("../CSGCombiner3D")
@@ -64,31 +64,31 @@ skeleton = NodePath("../CSGCombiner3D")
 shape = SubResource("ConcavePolygonShape3D_6xly2")
 
 [node name="Character" parent="." instance=ExtResource("2_sclr2")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9.627266, 0, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10.592202, 0, 3.5891824)
 in_air_momentum = false
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
 use_collision = true
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1.6, 0, 0, 0, 0.19999999, 0, 0, 0, 4.6080003, -3.1364877, 0, -4.4361258)
+transform = Transform3D(1.6, 0, 0, 0, 0.19999999, 0, 0, 0, 4.6080003, -3.1364877, 0, 1.2577143)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(2.6305838, 0, 0, 0, 0.19999999, 0, 0, 0, 2.0683005, -2.9337494, -4.7683716e-07, 10.776214)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(2.6305838, 0, 0, 0, 0.19999999, 0, 0, 0, 2.0683005, 0.4567442, -4.7683716e-07, -4.893982)
+transform = Transform3D(2.6305838, 0, 0, 0, 0.19999999, 0, 0, 0, 2.0683005, 1.929966, -4.7683716e-07, 0.7998581)
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="CSGCombiner3D"]
 operation = 1
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D/CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2671258, 0, 2.2909002)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0405836, -9.536743e-07, 0.13501233)
 radius = 1.5
 sides = 16
 
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCombiner3D/CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5712943, -9.536743e-07, -5.312965)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2934618, 0, 6.2929707)
 radius = 1.5
 sides = 16
 
@@ -100,33 +100,25 @@ transform = Transform3D(0.5000001, -0.75, 0.43301266, 0, 0.49999997, 0.86602545,
 shadow_enabled = true
 
 [node name="ComputerAndCart" parent="." node_paths=PackedStringArray("viewport", "mouse_ray") instance=ExtResource("4_lcih3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.8961673, -1.4305115e-06, 0.04207611)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.7548485, -1.4305115e-06, 3.9620707)
 viewport = NodePath("../SubViewport")
 mouse_ray = NodePath("../MouseRay")
 
 [node name="ComputerAndCart2" parent="." node_paths=PackedStringArray("viewport", "mouse_ray") instance=ExtResource("4_lcih3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5346303, -2.3841858e-06, 13.782757)
-viewport = NodePath("../SubViewport")
+viewport = NodePath("../SubViewport2")
 mouse_ray = NodePath("../MouseRay2")
+render_layer = 4
 
 [node name="MouseRay" parent="." instance=ExtResource("5_gqyf1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7654748, -9.536743e-07, 0.13501233)
-
-[node name="Pillar" parent="MouseRay" index="0"]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+transform = Transform3D(0.6, 0, 0, 0, 1, 0, 0, 0, 0.6, -4.0405836, -9.536743e-07, 0.13501233)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="MouseRay"]
-remote_path = NodePath("../../CSGCombiner3D/CSGCombiner3D/CSGCylinder3D2")
+remote_path = NodePath("../../CSGCombiner3D/CSGCombiner3D/CSGCylinder3D")
 update_scale = false
 
 [node name="MouseRay2" parent="." instance=ExtResource("5_gqyf1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2934618, 0, 2.2345228)
-
-[node name="Pillar" parent="MouseRay2" index="0"]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
-
-[node name="MeshInstance3D2" parent="MouseRay2/Pillar" index="1"]
-layers = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2934618, 0, 6.2929707)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="MouseRay2"]
 remote_path = NodePath("../../CSGCombiner3D/CSGCombiner3D/CSGCylinder3D2")
@@ -142,12 +134,8 @@ size = 24.826
 canvas_cull_mask = 4294967289
 
 [node name="ViewportCamera" parent="SubViewport2" index="1"]
-transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, 0, 10, 0.709)
 cull_mask = 4
 size = 24.826
 
-[editable path="MouseRay"]
-[editable path="MouseRay2"]
-[editable path="MouseRay2/Pillar"]
 [editable path="SubViewport"]
 [editable path="SubViewport2"]
