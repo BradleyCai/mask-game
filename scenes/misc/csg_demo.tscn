@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bk0vpa3n74vx5" path="res://shared/assets/images/debug/orange.png" id="1_alvx4"]
 [ext_resource type="Texture2D" uid="uid://cpmxigxpqfx1a" path="res://shared/assets/images/debug/dark.png" id="2_3nb0h"]
+[ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="3_6lg67"]
 [ext_resource type="PackedScene" uid="uid://kfm2wy2udp45" path="res://scenes/computer/computer_and_cart.tscn" id="4_3nb0h"]
 [ext_resource type="PackedScene" uid="uid://cq7cubtlrmi05" path="res://scenes/computer/mouse_ray.tscn" id="5_6lg67"]
 [ext_resource type="PackedScene" uid="uid://nuv1t6k08cgl" path="res://scenes/computer/computer_view_sub_viewport.tscn" id="6_7bpe7"]
@@ -104,5 +105,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ViewportCamera" parent="ComputerViewSubViewport" index="1" unique_id=1352610698]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 14.476867, 0.709)
+
+[node name="Character" parent="." unique_id=473771032 instance=ExtResource("3_6lg67")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.4072585, -4.7683716e-07, 6.7729397)
 
 [editable path="ComputerViewSubViewport"]

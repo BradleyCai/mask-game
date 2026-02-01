@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://c3y5d54mu1pm1"]
 
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_k2gg7"]
+[ext_resource type="Texture2D" uid="uid://bk0vpa3n74vx5" path="res://shared/assets/images/debug/orange.png" id="3_fcv37"]
 [ext_resource type="PackedScene" uid="uid://bxjmk0vd8ntqt" path="res://scenes/room_shell/room_shell.tscn" id="3_k2gg7"]
-[ext_resource type="PackedScene" uid="uid://l78a7iasobh4" path="res://scenes/misc/csg_demo.tscn" id="3_l6sy8"]
+[ext_resource type="Texture2D" uid="uid://cpmxigxpqfx1a" path="res://shared/assets/images/debug/dark.png" id="4_kcfjd"]
+[ext_resource type="PackedScene" uid="uid://cq7cubtlrmi05" path="res://scenes/computer/mouse_ray.tscn" id="5_dpu10"]
+[ext_resource type="Shader" uid="uid://biv5h5mcp73uy" path="res://shaders/TV.gdshader" id="6_q6uuj"]
+[ext_resource type="PackedScene" uid="uid://nuv1t6k08cgl" path="res://scenes/computer/computer_view_sub_viewport.tscn" id="7_wmcwa"]
+[ext_resource type="PackedScene" uid="uid://kfm2wy2udp45" path="res://scenes/computer/computer_and_cart.tscn" id="8_kcfjd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r58hw"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -16,6 +21,30 @@ background_mode = 2
 sky = SubResource("Sky_k2gg7")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k3l6j"]
+transparency = 1
+blend_mode = 1
+albedo_texture = ExtResource("3_fcv37")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0em4h"]
+albedo_texture = ExtResource("4_kcfjd")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jw3ls"]
+size = Vector2(20, 20)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8sww4"]
+data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u8udk"]
+shader = ExtResource("6_q6uuj")
+shader_parameter/vertJerkOpt = 0.0
+shader_parameter/vertMovementOpt = 0.0
+shader_parameter/bottomStaticOpt = 0.0
+shader_parameter/bottomStaticStrenth = 0.7
+shader_parameter/scalinesOpt = 0.8
+shader_parameter/rgbOffsetOpt = 0.2
+shader_parameter/horzFuzzOpt = 0.15
 
 [node name="Level1" type="Node3D" unique_id=1974743313]
 
@@ -31,5 +60,57 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.009999216, -3.0513134)
 
 [node name="RoomShell" parent="." unique_id=273484043 instance=ExtResource("3_k2gg7")]
 
-[node name="Node3D" parent="." unique_id=1241320881 instance=ExtResource("3_l6sy8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8069963, 0, -33.595158)
+[node name="wall" type="CSGCombiner3D" parent="." unique_id=1001744834]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.2064924, 0, -34.264618)
+material_override = SubResource("StandardMaterial3D_k3l6j")
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="wall" unique_id=1623445055]
+size = Vector3(3, 10, 20)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="wall" unique_id=2076999389]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.4688187, 4.484962, -5.748573)
+operation = 2
+radius = 2.5
+height = 10.0
+sides = 20
+
+[node name="ground" type="MeshInstance3D" parent="." unique_id=305832122]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2064924, 0, -34.264618)
+material_override = SubResource("StandardMaterial3D_0em4h")
+mesh = SubResource("PlaneMesh_jw3ls")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ground" unique_id=759836171]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground/StaticBody3D" unique_id=1704511698]
+shape = SubResource("ConcavePolygonShape3D_8sww4")
+
+[node name="MouseRay" parent="." unique_id=1467450126 instance=ExtResource("5_dpu10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.955066, 4.484962, -32.7958)
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="MouseRay" unique_id=1127348409]
+remote_path = NodePath("../../wall/CSGCylinder3D")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=74165414]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=780748002]
+material = SubResource("ShaderMaterial_u8udk")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ComputerViewSubViewport" parent="." unique_id=691042965 instance=ExtResource("7_wmcwa")]
+
+[node name="ViewportCamera" parent="ComputerViewSubViewport" index="1" unique_id=1352610698]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -7.0462055, 14.476867, -32.735878)
+
+[node name="ComputerAndCart" parent="." unique_id=140227885 node_paths=PackedStringArray("viewport", "mouse_ray") instance=ExtResource("8_kcfjd")]
+transform = Transform3D(0.79271543, 0, 0.6095919, 0, 1, 0, -0.6095919, 0, 0.79271543, -3.075941, 0.06630123, -28.494751)
+viewport = NodePath("../ComputerViewSubViewport")
+mouse_ray = NodePath("../MouseRay")
+
+[editable path="ComputerViewSubViewport"]
