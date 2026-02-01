@@ -11,14 +11,15 @@ config_version=5
 [application]
 
 config/name="mask-game"
-config/features=PackedStringArray("4.6", "Forward Plus")
+run/main_scene="uid://l78a7iasobh4"
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*uid://d14jm0podwkna"
-Signals="*uid://bjesn1ggr16u2"
-TextDisplayer="*uid://c511cttiefmea"
+Signals="*res://scenes/singletons/signals.gd"
+GameManager="*res://scenes/singletons/game_manager.tscn"
+TextDisplayer="*res://scenes/singletons/TextDisplayer.tscn"
 
 [editor_plugins]
 
