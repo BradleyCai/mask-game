@@ -142,6 +142,8 @@ var gravity : float = ProjectSettings.get_setting("physics/3d/default_gravity") 
 # Stores mouse input for rotating the camera in the physics process
 var mouseInput : Vector2 = Vector2(0,0)
 
+var can_exit_computer_state : bool = false
+
 #endregion
 
 
@@ -182,7 +184,12 @@ func _physics_process(delta): # Most things happen here.
 		_physics_process_at_computer(delta)
 
 func _physics_process_at_computer(delta):
-	pass
+	var input_dir : Vector2 = Input.get_vector(controls.LEFT, controls.RIGHT, controls.FORWARD, controls.BACKWARD)
+	if not input_dir.is_zero_approx():
+		# reparent(get_tree().current_scene)
+		if can_exit_computer_state:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			_enter_state(CharacterState.DEFAULT)
 
 func _physics_process_default_state(delta):
 	# Gravity
@@ -224,14 +231,27 @@ func _physics_process_default_state(delta):
 #region Input Handling
 
 func _enter_state(new_state : CharacterState):
+	HEADBOB_ANIMATION.stop()
 	_current_state = new_state
 
 func enter_computer_view_mode(computer : ComputerAndCart):
-	global_transform = Transform3D(computer.player_view_position.global_transform)
+	can_exit_computer_state = false
+	# reparent(computer.player_view_position)
+	var main_tween : Tween = create_tween()
+	main_tween.tween_property(self, "global_position", computer.player_view_position.global_position, 1.0)
+	main_tween.tween_interval(.5) # Extra sec to wait after being done
+	var old_rot : Vector3 = HEAD.rotation_degrees
+	HEAD.global_rotation_degrees = computer.player_view_position.global_rotation_degrees
 	HEAD.rotation_degrees.x = -25
-	HEAD.rotation_degrees.y = 270
+	# HEAD.rotation_degrees.y = 0
+	var desired_transform : Transform3D = HEAD.transform
+	HEAD.rotation_degrees = old_rot
+	create_tween().tween_property(HEAD, "transform", desired_transform, 1.0)
+	# global_transform = Transform3D(computer.player_view_position.global_transform)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	_enter_state(CharacterState.AT_COMPUTER)
+	await main_tween.finished
+	can_exit_computer_state = true
 
 func handle_jumping():
 	if jumping_enabled:
