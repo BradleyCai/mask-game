@@ -2,7 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_gs1ds"]
 [ext_resource type="PackedScene" uid="uid://kfm2wy2udp45" path="res://scenes/computer/computer_and_cart.tscn" id="2_hpffr"]
+[ext_resource type="Shader" uid="uid://ear70vgi465g" path="res://shaders/VHS.gdshader" id="3_26bwt"]
 [ext_resource type="PackedScene" uid="uid://c0sayalrwngb4" path="res://scenes/computer/mouse_ray.tscn" id="3_anfke"]
+[ext_resource type="Shader" uid="uid://biv5h5mcp73uy" path="res://shaders/TV.gdshader" id="5_hwutd"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_giuna"]
 size = Vector3(20, 1, 20)
@@ -18,6 +20,13 @@ sky_material = SubResource("ProceduralSkyMaterial_gs1ds")
 [sub_resource type="Environment" id="Environment_gs1ds"]
 background_mode = 2
 sky = SubResource("Sky_hpffr")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hwutd"]
+shader = ExtResource("3_26bwt")
+shader_parameter/tape_wave_amount = 0.003
+shader_parameter/tape_crease_amount = 2.5
+shader_parameter/color_displacement = 1.0
+shader_parameter/lines_velocity = 0.1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hpffr"]
 albedo_color = Color(0, 1, 1, 1)
@@ -43,6 +52,16 @@ albedo_color = Color(1, 1, 0, 1)
 [sub_resource type="SphereMesh" id="SphereMesh_ps4jx"]
 material = SubResource("StandardMaterial3D_inao6")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bpb7l"]
+shader = ExtResource("5_hwutd")
+shader_parameter/vertJerkOpt = 0.0
+shader_parameter/vertMovementOpt = 0.0
+shader_parameter/bottomStaticOpt = 0.0
+shader_parameter/bottomStaticStrenth = 0.7
+shader_parameter/scalinesOpt = 0.8
+shader_parameter/rgbOffsetOpt = 0.2
+shader_parameter/horzFuzzOpt = 0.15
+
 [node name="Main" type="Node3D" unique_id=1726885371]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=614280056]
@@ -66,6 +85,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14122486, 0.0663017, 4.6144
 viewport = NodePath("../SubViewport")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=664133499]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="SubViewport" unique_id=1680224420]
+
+[node name="ColorRect" type="ColorRect" parent="SubViewport/CanvasLayer" unique_id=432384304]
+material = SubResource("ShaderMaterial_hwutd")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ViewportCamera" type="Camera3D" parent="SubViewport" unique_id=1844864025]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10, 0.709)
@@ -96,3 +125,14 @@ mesh = SubResource("SphereMesh_ps4jx")
 
 [node name="MouseRay" parent="." unique_id=1110644558 instance=ExtResource("3_anfke")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8010254, 31.280197, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1885285551]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=345583470]
+material = SubResource("ShaderMaterial_bpb7l")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
