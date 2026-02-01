@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bxjmk0vd8ntqt"]
+
+[ext_resource type="PackedScene" uid="uid://bawm7xppfouil" path="res://scenes/room_shell/MaskGame_FullMap_V2.glb" id="1_vw02o"]
+[ext_resource type="PackedScene" uid="uid://xfwckrvdn1aw" path="res://scenes/room_shell/MaskGame_Ceiling.glb" id="2_h1n45"]
+
+[node name="RoomShell" type="Node3D" unique_id=273484043]
+
+[node name="MaskGame_FullMap_V2" parent="." unique_id=390885570 instance=ExtResource("1_vw02o")]
+
+[node name="MaskGame_Ceiling" parent="." unique_id=1788502059 instance=ExtResource("2_h1n45")]
