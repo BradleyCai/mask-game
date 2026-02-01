@@ -4,17 +4,15 @@
 resource_name = "DisplayTextAction"
 script/source = "extends Action
 
-@export var text: String = \"PrintAction printed\"
+@export var text: String = \"Test text\"
+## How long the text will last on the screen
+@export var timeout: float = 0.0
 
-func run(trigger: Node) -> void:
-	pass
+func run(_trigger: Node) -> void:
+	TextDisplayer.display_text(text)
+	await get_tree().create_timer(timeout).timeout
+	TextDisplayer.reset()
 "
 
-[node name="DisplayTextAction" type="Control" unique_id=1129964368]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="DisplayTextAction" type="Node" unique_id=1388931309]
 script = SubResource("GDScript_gvy7h")
