@@ -6,7 +6,7 @@ extends Node3D
 
 @export var smooth_speed := 8.0
 
-@onready var ball: Node3D = get_node(ball_path)
+@onready var mask_pos: Node3D = get_node(ball_path)
 var bodies: Array[AnimatableBody3D] = []
 
 func _ready():
@@ -15,7 +15,7 @@ func _ready():
 			bodies.append(c)
 
 func _process(delta):
-	var ball_pos = ball.global_position
+	var ball_pos = mask_pos.global_position
 
 	for body in bodies:
 		var d = body.global_position.distance_to(ball_pos)
