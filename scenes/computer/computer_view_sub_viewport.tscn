@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://nuv1t6k08cgl"]
+[gd_scene load_steps=0 format=3 uid="uid://nuv1t6k08cgl"]
 
 [ext_resource type="Shader" uid="uid://ear70vgi465g" path="res://shaders/VHS.gdshader" id="1_2b5sd"]
 
