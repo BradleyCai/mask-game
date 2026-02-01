@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://6vy2cf4baq5m"]
+
+[sub_resource type="GDScript" id="GDScript_eajxp"]
+resource_name = "RunActionsDeferredAction"
+script/source = "extends Action
+
+@export var timeout: float = 0.0
+
+func run(_trigger: Node) -> void:
+	await get_tree().create_timer(timeout).timeout
+	for child in self.get_children():
+		var action := child as Action
+		if action == null:
+			continue
+
+		action.run(child)
+"
+
+[node name="RunActionsDeferredAction" type="Node" unique_id=532238730]
+script = SubResource("GDScript_eajxp")

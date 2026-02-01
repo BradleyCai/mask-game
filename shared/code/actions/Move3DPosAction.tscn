@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://blmco1pmd8k5h"]
+
+[sub_resource type="GDScript" id="GDScript_qwoep"]
+resource_name = "Move3dPosAction"
+script/source = "extends Action
+
+@export var move_target: Node3D
+
+func run(trigger: Node) -> void:
+	move_target.global_position = self.global_position
+"
+
+[node name="Move3dPosAction" type="Node3D" unique_id=1629091126]
+script = SubResource("GDScript_qwoep")

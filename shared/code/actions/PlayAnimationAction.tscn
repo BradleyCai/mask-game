@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ddgtlk18rbcxf"]
+
+[sub_resource type="GDScript" id="GDScript_8jde0"]
+resource_name = "PlayAnimationAction"
+script/source = "extends Action
+
+@export var animation_name: StringName = &\"RESET\"
+@export var animation_player: AnimationPlayer
+
+func run(_trigger: Node) -> void:
+	animation_player.play(animation_name)
+"
+
+[node name="PlayAnimationAction" type="Node" unique_id=1598273244]
+script = SubResource("GDScript_8jde0")

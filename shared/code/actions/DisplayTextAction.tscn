@@ -4,14 +4,12 @@
 resource_name = "DisplayTextAction"
 script/source = "extends Action
 
-@export var text: String = \"Test text\"
+@export var text: String = \"the quick brown fox\"
 ## How long the text will last on the screen
 @export var timeout: float = 0.0
 
 func run(_trigger: Node) -> void:
-	TextDisplayer.display_text(text)
-	await get_tree().create_timer(timeout).timeout
-	TextDisplayer.reset()
+	TextDisplayer.display_text(text, timeout)
 "
 
 [node name="DisplayTextAction" type="Node" unique_id=1388931309]

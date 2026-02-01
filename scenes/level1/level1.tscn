@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://c3y5d54mu1pm1"]
+
+[ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_k2gg7"]
+[ext_resource type="PackedScene" uid="uid://bxjmk0vd8ntqt" path="res://scenes/room_shell/room_shell.tscn" id="3_k2gg7"]
+[ext_resource type="PackedScene" uid="uid://l78a7iasobh4" path="res://scenes/misc/csg_demo.tscn" id="3_l6sy8"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r58hw"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_k2gg7"]
+sky_material = SubResource("ProceduralSkyMaterial_r58hw")
+
+[sub_resource type="Environment" id="Environment_l6sy8"]
+background_mode = 2
+sky = SubResource("Sky_k2gg7")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Level1" type="Node3D" unique_id=1974743313]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1070458160]
+environment = SubResource("Environment_l6sy8")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=135235478]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Character" parent="." unique_id=473771032 instance=ExtResource("2_k2gg7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.009999216, -3.0513134)
+
+[node name="RoomShell" parent="." unique_id=273484043 instance=ExtResource("3_k2gg7")]
+
+[node name="Node3D" parent="." unique_id=1241320881 instance=ExtResource("3_l6sy8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8069963, 0, -33.595158)
