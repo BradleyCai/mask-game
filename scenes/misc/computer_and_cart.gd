@@ -11,9 +11,10 @@ var box_size : Vector2
 var last_poll_pressed : bool = false
 
 func _ready() -> void:
+	await RenderingServer.frame_post_draw
 	var mat : StandardMaterial3D = screen_mesh.mesh.surface_get_material(0)
-	var viewport_tex : ViewportTexture = mat.albedo_texture
-	viewport_tex.viewport_path = viewport.get_path()
+	var viewport_tex : ViewportTexture = viewport.get_texture()
+	mat.albedo_texture = viewport_tex
 	var box : BoxShape3D = shape.shape
 	box_size = Vector2(box.size.x, box.size.y)
 
