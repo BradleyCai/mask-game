@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ly4ovf27g1og"]
 
+[ext_resource type="Environment" uid="uid://ch8jum6qs1fxb" path="res://environments/main_environment.tres" id="1_2ewvs"]
 [ext_resource type="PackedScene" uid="uid://dxbw2hi0uyj4c" path="res://scenes/sticks/liftable_sticks.tscn" id="1_p17da"]
 [ext_resource type="Script" uid="uid://bbtb5md6xfaq" path="res://scenes/sticks/bowl_ball.gd" id="2_2qt5s"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_p17da"]
@@ -9,18 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://cq7cubtlrmi05" path="res://scenes/computer/mouse_ray.tscn" id="7_hgmbt"]
 [ext_resource type="PackedScene" uid="uid://bxjmk0vd8ntqt" path="res://scenes/room_shell/room_shell.tscn" id="8_mqbo8"]
 [ext_resource type="Texture2D" uid="uid://cpmxigxpqfx1a" path="res://shared/assets/images/debug/dark.png" id="9_2ewvs"]
-
-[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_p17da"]
-ground_color = Color(0.9137255, 0.9882353, 0.85882354, 1)
-
-[sub_resource type="Sky" id="Sky_n481h"]
-sky_material = SubResource("PhysicalSkyMaterial_p17da")
-
-[sub_resource type="Environment" id="Environment_t57k4"]
-background_mode = 2
-sky = SubResource("Sky_n481h")
-ambient_light_color = Color(0.92156863, 0.92156863, 0.83137256, 1)
-ambient_light_energy = 5.9
 
 [sub_resource type="Curve" id="Curve_hgmbt"]
 _limits = [0.0, 1.0, 0.0, 3.0]
@@ -56,7 +45,7 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=738808877]
-environment = SubResource("Environment_t57k4")
+environment = ExtResource("1_2ewvs")
 
 [node name="sticks2" parent="." unique_id=1705130095 instance=ExtResource("1_p17da")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7959453, 0, -0.8237903)
@@ -143,7 +132,7 @@ size = 21.017
 [node name="MouseRay" parent="." unique_id=362649603 instance=ExtResource("7_hgmbt")]
 transform = Transform3D(0.6, 0, 0, 0, 1, 0, 0, 0, 0.6, -4.2762694, -9.536743e-07, 5.0670567)
 
-[node name="MeshInstance3D" parent="MouseRay/Pillar" index="0"]
+[node name="MeshInstance3D" parent="MouseRay/Pillar" index="0" unique_id=1631213404]
 layers = 0
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="MouseRay" unique_id=835574996]
