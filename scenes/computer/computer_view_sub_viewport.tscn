@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://nuv1t6k08cgl"]
+
+[ext_resource type="Shader" uid="uid://ear70vgi465g" path="res://shaders/VHS.gdshader" id="1_2b5sd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hwutd"]
+shader = ExtResource("1_2b5sd")
+shader_parameter/tape_wave_amount = 0.003
+shader_parameter/tape_crease_amount = 2.5
+shader_parameter/color_displacement = 1.0
+shader_parameter/lines_velocity = 0.1
+
+[node name="SubViewport" type="SubViewport" unique_id=691042965]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1941284233]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=661351843]
+material = SubResource("ShaderMaterial_hwutd")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ViewportCamera" type="Camera3D" parent="." unique_id=1352610698]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10, 0.709)
+cull_mask = 2
+projection = 1
+size = 14.958
