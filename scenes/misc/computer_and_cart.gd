@@ -1,7 +1,6 @@
 class_name ComputerAndCart
 extends Node3D
 
-
 @export var screen_mesh : MeshInstance3D
 @export var viewport : SubViewport
 @export var character : Character
