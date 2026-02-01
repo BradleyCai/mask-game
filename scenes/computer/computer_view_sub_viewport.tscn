@@ -1,6 +1,7 @@
-[gd_scene load_steps=0 format=3 uid="uid://nuv1t6k08cgl"]
+[gd_scene format=3 uid="uid://nuv1t6k08cgl"]
 
 [ext_resource type="Shader" uid="uid://ear70vgi465g" path="res://shaders/VHS.gdshader" id="1_2b5sd"]
+[ext_resource type="Script" uid="uid://irt673icjuuv" path="res://scenes/computer/computer_view_sub_viewport.gd" id="1_un5tw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hwutd"]
 shader = ExtResource("1_2b5sd")
@@ -9,7 +10,9 @@ shader_parameter/tape_crease_amount = 2.5
 shader_parameter/color_displacement = 1.0
 shader_parameter/lines_velocity = 0.1
 
-[node name="SubViewport" type="SubViewport" unique_id=691042965]
+[node name="ComputerViewSubViewport" type="SubViewport" unique_id=691042965 node_paths=PackedStringArray("camera")]
+script = ExtResource("1_un5tw")
+camera = NodePath("ViewportCamera")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1941284233]
 
@@ -23,6 +26,6 @@ grow_vertical = 2
 
 [node name="ViewportCamera" type="Camera3D" parent="." unique_id=1352610698]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10, 0.709)
-cull_mask = 2
+cull_mask = 0
 projection = 1
 size = 14.958

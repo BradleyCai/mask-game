@@ -3,9 +3,15 @@
 [ext_resource type="Script" uid="uid://cma57a7whdr8g" path="res://scenes/computer/mouse_ray.gd" id="1_blf8b"]
 [ext_resource type="PackedScene" uid="uid://cimnuf8w5g66b" path="res://scenes/masks/pillar.tscn" id="2_jqooh"]
 
-[node name="MouseRay" type="RayCast3D" unique_id=1110644558]
+[node name="MouseRay" type="RayCast3D" unique_id=1110644558 node_paths=PackedStringArray("_computer_screen_mesh_visual")]
 target_position = Vector3(0, -50, 0)
 collision_mask = 2
 script = ExtResource("1_blf8b")
+_computer_screen_mesh_visual = NodePath("Pillar/MeshInstance3D2")
 
 [node name="Pillar" parent="." unique_id=302520146 instance=ExtResource("2_jqooh")]
+
+[node name="MeshInstance3D2" parent="Pillar" index="1" unique_id=1839802309]
+layers = 0
+
+[editable path="Pillar"]
