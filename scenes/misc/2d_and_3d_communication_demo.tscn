@@ -1,9 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://bxs05anor7exh"]
+[gd_scene format=3 uid="uid://3sl10epbswwf"]
 
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_gs1ds"]
 [ext_resource type="PackedScene" uid="uid://kfm2wy2udp45" path="res://scenes/computer/computer_and_cart.tscn" id="2_hpffr"]
-[ext_resource type="Shader" uid="uid://ear70vgi465g" path="res://shaders/VHS.gdshader" id="3_26bwt"]
 [ext_resource type="PackedScene" uid="uid://cq7cubtlrmi05" path="res://scenes/computer/mouse_ray.tscn" id="3_anfke"]
+[ext_resource type="PackedScene" uid="uid://nuv1t6k08cgl" path="res://scenes/computer/computer_view_sub_viewport.tscn" id="3_hwutd"]
 [ext_resource type="Shader" uid="uid://biv5h5mcp73uy" path="res://shaders/TV.gdshader" id="5_hwutd"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_giuna"]
@@ -20,13 +20,6 @@ sky_material = SubResource("ProceduralSkyMaterial_gs1ds")
 [sub_resource type="Environment" id="Environment_gs1ds"]
 background_mode = 2
 sky = SubResource("Sky_hpffr")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hwutd"]
-shader = ExtResource("3_26bwt")
-shader_parameter/tape_wave_amount = 0.003
-shader_parameter/tape_crease_amount = 2.5
-shader_parameter/color_displacement = 1.0
-shader_parameter/lines_velocity = 0.1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hpffr"]
 albedo_color = Color(0, 1, 1, 1)
@@ -62,73 +55,65 @@ shader_parameter/scalinesOpt = 0.8
 shader_parameter/rgbOffsetOpt = 0.2
 shader_parameter/horzFuzzOpt = 0.15
 
-[node name="Main" type="Node3D"]
+[node name="Main" type="Node3D" unique_id=276086501]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1263383898]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.45447862, 0)
 mesh = SubResource("BoxMesh_giuna")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=497647643]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=476797551]
 shape = SubResource("BoxShape3D_gs1ds")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=443365997]
 environment = SubResource("Environment_gs1ds")
 
-[node name="Character" parent="." instance=ExtResource("1_gs1ds")]
+[node name="Character" parent="." unique_id=1587207834 instance=ExtResource("1_gs1ds")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.8421545, 0, 0)
 in_air_momentum = false
 
-[node name="ComputerAndCart" parent="." node_paths=PackedStringArray("viewport") instance=ExtResource("2_hpffr")]
+[node name="ComputerAndCart" parent="." unique_id=1761079130 node_paths=PackedStringArray("viewport", "mouse_ray") instance=ExtResource("2_hpffr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14122486, 0.0663017, 4.6144567)
-viewport = NodePath("../SubViewport")
+viewport = NodePath("../ComputerViewSubViewport")
+mouse_ray = NodePath("../MouseRay")
 
-[node name="SubViewport" type="SubViewport" parent="."]
+[node name="ComputerAndCart2" parent="." unique_id=1312241595 node_paths=PackedStringArray("viewport", "mouse_ray") instance=ExtResource("2_hpffr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9293768, 0.0663017, 4.6144567)
+viewport = NodePath("../ComputerViewSubViewport2")
+mouse_ray = NodePath("../MouseRay2")
+render_layer = 4
 
-[node name="CanvasLayer" type="CanvasLayer" parent="SubViewport"]
-
-[node name="ColorRect" type="ColorRect" parent="SubViewport/CanvasLayer"]
-material = SubResource("ShaderMaterial_hwutd")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ViewportCamera" type="Camera3D" parent="SubViewport"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10, 0.709)
-cull_mask = 2
-projection = 1
-size = 14.958
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=470611964]
 transform = Transform3D(1, 0, 0, 0, 0.056431416, 0.99840647, 0, -0.99840647, 0.056431416, 0, 17.648159, 0)
 
-[node name="TestNodes" type="Node3D" parent="."]
+[node name="TestNodes" type="Node3D" parent="." unique_id=1402982719]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="TestNodes"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestNodes" unique_id=190663541]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7967005, 0.35063636, -3.3533425)
 mesh = SubResource("SphereMesh_anfke")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="TestNodes"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="TestNodes" unique_id=1738207531]
 transform = Transform3D(-0.99813694, -2.6669893e-09, -0.0610136, 2.6669893e-09, 1, -8.734134e-08, 0.0610136, -8.734134e-08, -0.99813694, -6.5926075, 0.35063636, -3.669817)
 mesh = SubResource("SphereMesh_hwutd")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="TestNodes"]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="TestNodes" unique_id=258016708]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4324846, 0.35063636, 5.6389694)
 mesh = SubResource("SphereMesh_vgck2")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="TestNodes"]
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="TestNodes" unique_id=165318931]
 transform = Transform3D(-0.99813694, -2.6669893e-09, -0.0610136, 2.6669893e-09, 1, -8.734134e-08, 0.0610136, -8.734134e-08, -0.99813694, -4.8337817, 0.35063636, 5.424329)
 mesh = SubResource("SphereMesh_ps4jx")
 
-[node name="MouseRay" parent="." instance=ExtResource("3_anfke")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8010254, -0.77061796, 0)
+[node name="MouseRay" parent="." unique_id=937966843 instance=ExtResource("3_anfke")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.199002, -0.77061796, -1.4510121)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="MouseRay2" parent="." unique_id=1110644558 instance=ExtResource("3_anfke")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.115241, -0.77061796, -1.888515)
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=314583011]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=382536860]
 material = SubResource("ShaderMaterial_bpb7l")
 anchors_preset = 15
 anchor_right = 1.0
@@ -136,3 +121,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="ComputerViewSubViewport" parent="." unique_id=691042965 instance=ExtResource("3_hwutd")]
+
+[node name="ComputerViewSubViewport2" parent="." unique_id=527979903 instance=ExtResource("3_hwutd")]
