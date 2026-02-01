@@ -1,9 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://ly4ovf27g1og"]
+[gd_scene load_steps=18 format=3 uid="uid://ly4ovf27g1og"]
 
 [ext_resource type="PackedScene" uid="uid://dxbw2hi0uyj4c" path="res://scenes/sticks/liftable_sticks.tscn" id="1_p17da"]
 [ext_resource type="Script" uid="uid://bbtb5md6xfaq" path="res://scenes/sticks/bowl_ball.gd" id="2_2qt5s"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_p17da"]
 [ext_resource type="Script" uid="uid://d4jfyqvqwk2do" path="res://scenes/sticks/checker.gd" id="3_n481h"]
+[ext_resource type="PackedScene" uid="uid://kfm2wy2udp45" path="res://scenes/computer/computer_and_cart.tscn" id="5_yaqlp"]
+[ext_resource type="PackedScene" uid="uid://nuv1t6k08cgl" path="res://scenes/computer/computer_view_sub_viewport.tscn" id="6_hgmbt"]
+[ext_resource type="PackedScene" uid="uid://cq7cubtlrmi05" path="res://scenes/computer/mouse_ray.tscn" id="7_hgmbt"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_p17da"]
 ground_color = Color(0.9137255, 0.9882353, 0.85882354, 1)
@@ -16,6 +19,11 @@ background_mode = 2
 sky = SubResource("Sky_n481h")
 ambient_light_color = Color(0.92156863, 0.92156863, 0.83137256, 1)
 ambient_light_energy = 5.9
+
+[sub_resource type="Curve" id="Curve_hgmbt"]
+_limits = [0.0, 1.0, 0.0, 3.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1e-05, 0.57896245), 0.0, 0.0, 0, 0, Vector2(2.2920203, 0), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_t57k4"]
 
@@ -43,9 +51,13 @@ environment = SubResource("Environment_t57k4")
 
 [node name="sticks2" parent="." instance=ExtResource("1_p17da")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7959453, 0, -0.8237903)
+falloff = SubResource("Curve_hgmbt")
+
+[node name="ball" parent="sticks2" index="808"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4803243, -9.536743e-07, 5.890847)
 
 [node name="bowl_ball" type="RigidBody3D" parent="." groups=["ball"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6581948, 1.678705, -1.9458213)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.257776, 1.6787045, 2.0398898)
 script = ExtResource("2_2qt5s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bowl_ball"]
@@ -84,7 +96,7 @@ transform = Transform3D(13.219378, 0, 0, 0, 1, 0, 0, 0, 13.71071, -1.7999291, 0.
 shape = SubResource("ConvexPolygonShape3D_p17da")
 
 [node name="Character" parent="." instance=ExtResource("2_p17da")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.8421545, 1.1172817, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.6170983, 1.1172817, 7.84917)
 in_air_momentum = false
 
 [node name="bowl" type="Node3D" parent="."]
@@ -119,4 +131,34 @@ visible = false
 light_color = Color(0, 1, 0, 1)
 spot_range = 2.679
 
+[node name="ComputerAndCart" parent="." node_paths=PackedStringArray("viewport", "mouse_ray") instance=ExtResource("5_yaqlp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29831028, 1.0673211, 5.887173)
+viewport = NodePath("../SubViewport")
+mouse_ray = NodePath("../MouseRay")
+
+[node name="SubViewport" parent="." instance=ExtResource("6_hgmbt")]
+
+[node name="ViewportCamera" parent="SubViewport" index="1"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 16.25358, 0.709)
+cull_mask = 2
+size = 21.017
+
+[node name="MouseRay" parent="." instance=ExtResource("7_hgmbt")]
+transform = Transform3D(0.6, 0, 0, 0, 1, 0, 0, 0, 0.6, -4.2762694, -9.536743e-07, 5.0670567)
+
+[node name="MeshInstance3D" parent="MouseRay/Pillar" index="0"]
+layers = 0
+
+[node name="MeshInstance3D2" parent="MouseRay/Pillar" index="1"]
+layers = 2
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="MouseRay"]
+remote_path = NodePath("../../sticks2/ball")
+update_scale = false
+
 [connection signal="body_entered" from="bowl/checker" to="bowl/checker" method="_on_body_entered"]
+
+[editable path="sticks2"]
+[editable path="SubViewport"]
+[editable path="MouseRay"]
+[editable path="MouseRay/Pillar"]
