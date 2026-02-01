@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://blmco1pmd8k5h"]
+[gd_scene load_steps=0 format=3 uid="uid://blmco1pmd8k5h"]
 
 [sub_resource type="GDScript" id="GDScript_qwoep"]
 resource_name = "Move3dPosAction"

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://6vy2cf4baq5m"]
+[gd_scene load_steps=0 format=3 uid="uid://6vy2cf4baq5m"]
 
 [sub_resource type="GDScript" id="GDScript_eajxp"]
 resource_name = "RunActionsDeferredAction"
