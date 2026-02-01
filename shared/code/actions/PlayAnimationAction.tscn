@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ddgtlk18rbcxf"]
+[gd_scene load_steps=0 format=3 uid="uid://ddgtlk18rbcxf"]
 
 [sub_resource type="GDScript" id="GDScript_8jde0"]
 resource_name = "PlayAnimationAction"

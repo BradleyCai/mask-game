@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b62vo4ftcdavk"]
+[gd_scene format=3 uid="uid://b62vo4ftcdavk"]
 
 [ext_resource type="Texture2D" uid="uid://cpmxigxpqfx1a" path="res://shared/assets/images/debug/dark.png" id="1_513p7"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_sclr2"]
@@ -6,18 +6,20 @@
 [ext_resource type="PackedScene" uid="uid://cq7cubtlrmi05" path="res://scenes/computer/mouse_ray.tscn" id="5_gqyf1"]
 [ext_resource type="PackedScene" uid="uid://nuv1t6k08cgl" path="res://scenes/computer/computer_view_sub_viewport.tscn" id="5_lcih3"]
 [ext_resource type="PackedScene" uid="uid://bxjmk0vd8ntqt" path="res://scenes/room_shell/room_shell.tscn" id="6_gqyf1"]
+[ext_resource type="Shader" uid="uid://biv5h5mcp73uy" path="res://shaders/TV.gdshader" id="7_yrjl7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o577s"]
 albedo_texture = ExtResource("1_513p7")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_a7jg1"]
-size = Vector2(20, 20)
+[sub_resource type="BoxMesh" id="BoxMesh_gqyf1"]
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6xly2"]
-data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
+[sub_resource type="BoxShape3D" id="BoxShape3D_yrjl7"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_yrjl7"]
 size = Vector3(20, 1, 20)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6xly2"]
+data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_513p7"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -32,118 +34,130 @@ sky = SubResource("Sky_lo0ai")
 tonemap_mode = 2
 glow_enabled = true
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ha10v"]
+shader = ExtResource("7_yrjl7")
+shader_parameter/vertJerkOpt = 0.0
+shader_parameter/vertMovementOpt = 0.0
+shader_parameter/bottomStaticOpt = 0.0
+shader_parameter/bottomStaticStrenth = 0.7
+shader_parameter/scalinesOpt = 0.8
+shader_parameter/rgbOffsetOpt = 0.2
+shader_parameter/horzFuzzOpt = 0.15
 
-[node name="ground" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.5405302, 0, 0, 0, 1, 0, 0, 0, 1, -10.736977, 0, 8.047085)
+[node name="Node3D" type="Node3D" unique_id=901053143]
+
+[node name="ground" type="MeshInstance3D" parent="." unique_id=375454775]
+transform = Transform3D(9.936638, 0, 0, 0, 4.4883285, 0, 0, 0, 23.196516, -10.141731, -2.3112204, 7.8238964)
 material_override = SubResource("StandardMaterial3D_o577s")
-mesh = SubResource("PlaneMesh_a7jg1")
+mesh = SubResource("BoxMesh_gqyf1")
 skeleton = NodePath("../CSGCombiner3D")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="ground"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground" unique_id=847055088]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_6xly2")
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="ground/StaticBody3D" unique_id=1966465953]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+shape = SubResource("BoxShape3D_yrjl7")
 
-[node name="ground2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.24611771, 0, 0, 0, 1, 0, 0, 0, 1, 7.2671986, 0, 0)
-material_override = SubResource("StandardMaterial3D_o577s")
-mesh = SubResource("PlaneMesh_a7jg1")
-skeleton = NodePath("../CSGCombiner3D")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="ground2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground2/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_6xly2")
-
-[node name="ground3" type="MeshInstance3D" parent="."]
+[node name="ground3" type="MeshInstance3D" parent="." unique_id=79036700]
 transform = Transform3D(0.27169654, 0, 0, 0, 1, 0, 0, 0, 0.21939242, 0.8143258, -0.46605456, 15.084698)
 material_override = SubResource("StandardMaterial3D_o577s")
 mesh = SubResource("BoxMesh_yrjl7")
 skeleton = NodePath("../CSGCombiner3D")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="ground3"]
+[node name="StaticBody3D" type="StaticBody3D" parent="ground3" unique_id=837450253]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground3/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground3/StaticBody3D" unique_id=1291230631]
 shape = SubResource("ConcavePolygonShape3D_6xly2")
 
-[node name="Character" parent="." instance=ExtResource("2_sclr2")]
+[node name="Character" parent="." unique_id=1354266731 instance=ExtResource("2_sclr2")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -37.397385, 0, 12.122969)
 in_air_momentum = false
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1902394528]
 use_collision = true
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1.6, 0, 0, 0, 0.19999999, 0, 0, 0, 4.6080003, -3.1364877, 0, 1.2577143)
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1668656175]
+transform = Transform3D(1.6, 0, 0, 0, 0.19999999, 0, 0, 0, 4.6080003, -2.8138294, 0, 1.2577143)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=713167282]
 transform = Transform3D(2.6305838, 0, 0, 0, 0.19999999, 0, 0, 0, 2.0683005, -2.9337494, -4.7683716e-07, 10.776214)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(2.6305838, 0, 0, 0, 0.19999999, 0, 0, 0, 2.0683005, 1.0183277, -4.7683716e-07, 0.7998581)
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1615861595]
+transform = Transform3D(2.6305838, 0, 0, 0, 0.19999999, 0, 0, 0, 2.0683005, 1.9657296, -4.7683716e-07, 0.7998581)
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="CSGCombiner3D"]
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="CSGCombiner3D" unique_id=1618946937]
 operation = 1
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D/CSGCombiner3D"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D/CSGCombiner3D" unique_id=38715191]
 transform = Transform3D(1, 0, 0, 0, 1.667, 0, 0, 0, 1, -1.3466935, -9.536743e-07, 0.13501233)
 radius = 0.9
 sides = 16
 
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCombiner3D/CSGCombiner3D"]
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCombiner3D/CSGCombiner3D" unique_id=1159204747]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2934618, 0, 6.2929707)
 radius = 0.9
 sides = 16
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=999940239]
 environment = SubResource("Environment_sclr2")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2132701786]
 transform = Transform3D(0.5000001, -0.75, 0.43301266, 0, 0.49999997, 0.86602545, -0.8660254, -0.4330128, 0.25000003, -4.8421545, 0, 0)
 shadow_enabled = true
 
-[node name="ComputerAndCart" parent="." node_paths=PackedStringArray("viewport", "mouse_ray") instance=ExtResource("4_lcih3")]
+[node name="ComputerAndCart" parent="." unique_id=1819144231 node_paths=PackedStringArray("viewport", "mouse_ray") instance=ExtResource("4_lcih3")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.7548485, -1.4305115e-06, 3.9620707)
 viewport = NodePath("../SubViewport")
 mouse_ray = NodePath("../MouseRay")
 
-[node name="ComputerAndCart2" parent="." node_paths=PackedStringArray("viewport", "mouse_ray") instance=ExtResource("4_lcih3")]
+[node name="ComputerAndCart2" parent="." unique_id=228845872 node_paths=PackedStringArray("viewport", "mouse_ray") instance=ExtResource("4_lcih3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.51697254, -2.3841858e-06, 13.782757)
 viewport = NodePath("../SubViewport2")
 mouse_ray = NodePath("../MouseRay2")
 render_layer = 4
 
-[node name="MouseRay" parent="." instance=ExtResource("5_gqyf1")]
+[node name="MouseRay" parent="." unique_id=304726641 instance=ExtResource("5_gqyf1")]
 transform = Transform3D(0.36, 0, 0, 0, 0.857, 0, 0, 0, 0.36, -1.3466935, -9.536743e-07, 0.13501233)
 
-[node name="RemoteTransform3D" type="RemoteTransform3D" parent="MouseRay"]
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="MouseRay" unique_id=616037479]
 remote_path = NodePath("../../CSGCombiner3D/CSGCombiner3D/CSGCylinder3D")
 update_scale = false
 
-[node name="MouseRay2" parent="." instance=ExtResource("5_gqyf1")]
+[node name="MouseRay2" parent="." unique_id=465128102 instance=ExtResource("5_gqyf1")]
 transform = Transform3D(0.36, 0, 0, 0, 1, 0, 0, 0, 0.36, 1.2934618, 0, 6.2929707)
 
-[node name="RemoteTransform3D" type="RemoteTransform3D" parent="MouseRay2"]
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="MouseRay2" unique_id=137949726]
 remote_path = NodePath("../../CSGCombiner3D/CSGCombiner3D/CSGCylinder3D2")
 update_scale = false
 
-[node name="SubViewport" parent="." instance=ExtResource("5_lcih3")]
+[node name="SubViewport" parent="." unique_id=1008794874 instance=ExtResource("5_lcih3")]
 
-[node name="ViewportCamera" parent="SubViewport" index="1"]
+[node name="ViewportCamera" parent="SubViewport" index="1" unique_id=1352610698]
 transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, 0, 10, 6.4284935)
 size = 15.0
 
-[node name="SubViewport2" parent="." instance=ExtResource("5_lcih3")]
+[node name="SubViewport2" parent="." unique_id=115513578 instance=ExtResource("5_lcih3")]
 canvas_cull_mask = 4294967289
 
-[node name="ViewportCamera" parent="SubViewport2" index="1"]
+[node name="ViewportCamera" parent="SubViewport2" index="1" unique_id=1352610698]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10, 6.4284935)
 cull_mask = 2
 size = 15.0
 
-[node name="RoomShell" parent="." instance=ExtResource("6_gqyf1")]
+[node name="RoomShell" parent="." unique_id=1019533578 instance=ExtResource("6_gqyf1")]
 transform = Transform3D(7.54979e-08, 0, -1, 0, 1, 0, 1, 0, 7.54979e-08, -38.98494, 0, 13.130732)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1474921341]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=957543508]
+material = SubResource("ShaderMaterial_ha10v")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [editable path="SubViewport"]
 [editable path="SubViewport2"]
