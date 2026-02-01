@@ -40,7 +40,7 @@ skeleton = NodePath("../CSGCombiner3D")
 shape = SubResource("ConcavePolygonShape3D_6xly2")
 
 [node name="ground2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.24611771, 0, 0, 0, 1, 0, 0, 0, 1, 9.928885, 0, 0)
+transform = Transform3D(0.24611771, 0, 0, 0, 1, 0, 0, 0, 1, 5.560712, 0, 0)
 material_override = SubResource("StandardMaterial3D_o577s")
 mesh = SubResource("PlaneMesh_a7jg1")
 skeleton = NodePath("../CSGCombiner3D")
@@ -48,6 +48,17 @@ skeleton = NodePath("../CSGCombiner3D")
 [node name="StaticBody3D" type="StaticBody3D" parent="ground2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ground2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_6xly2")
+
+[node name="ground3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.27169654, 0, 0, 0, 1, 0, 0, 0, 0.21939242, -1.6581917, 0, 15.084698)
+material_override = SubResource("StandardMaterial3D_o577s")
+mesh = SubResource("PlaneMesh_a7jg1")
+skeleton = NodePath("../CSGCombiner3D")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ground3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground3/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_6xly2")
 
 [node name="Character" parent="." instance=ExtResource("2_sclr2")]
@@ -59,25 +70,16 @@ in_air_momentum = false
 use_collision = true
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1.6, 0, 0, 0, 0.19999999, 0, 0, 0, 4.6080003, -1.9100959, 0, -3.2999077)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(2.6305838, 0, 0, 0, 0.19999999, 0, 0, 0, 2.0683005, 1.8971732, -4.7683716e-07, 0.1598959)
+transform = Transform3D(1.6, 0, 0, 0, 0.19999999, 0, 0, 0, 4.6080003, -3.1265552, 0, -4.4361258)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(2.6305838, 0, 0, 0, 0.19999999, 0, 0, 0, 2.0683005, -0.43713403, -4.7683716e-07, 4.885613)
+transform = Transform3D(2.6305838, 0, 0, 0, 0.19999999, 0, 0, 0, 2.0683005, -2.9337494, -4.7683716e-07, 10.776214)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(2.6305838, 0, 0, 0, 0.19999999, 0, 0, 0, 2.0683005, 4.6698723, -4.7683716e-07, 6.4604244)
+transform = Transform3D(2.6305838, 0, 0, 0, 0.19999999, 0, 0, 0, 2.0683005, 0.4567442, -4.7683716e-07, -4.893982)
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="CSGCombiner3D"]
-operation = 1
-
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D/CSGCombiner3D"]
-transform = Transform3D(14.3342905, 0, 0, 0, 2.6392994, 0, 0, 0, 22.264002, 0.9108906, 0, 0)
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D/CSGCombiner3D"]
-transform = Transform3D(6.8966537, 0, 0, 0, 1.0000004, 0, 0, 0, 6.362369, 0.9295325, 0, -0.8654437)
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(3.8087044, 0, 0, 0, 1.0000004, 0, 0, 0, 3.8529968, -1.217946, 0, -2.842311)
 operation = 1
 sides = 16
 script = ExtResource("3_sclr2")
