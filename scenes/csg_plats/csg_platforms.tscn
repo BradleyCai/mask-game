@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cpmxigxpqfx1a" path="res://shared/assets/images/debug/dark.png" id="1_513p7"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_sclr2"]
+[ext_resource type="Environment" uid="uid://ch8jum6qs1fxb" path="res://environments/main_environment.tres" id="3_nr0b5"]
 [ext_resource type="PackedScene" uid="uid://kfm2wy2udp45" path="res://scenes/computer/computer_and_cart.tscn" id="4_lcih3"]
 [ext_resource type="PackedScene" uid="uid://cq7cubtlrmi05" path="res://scenes/computer/mouse_ray.tscn" id="5_gqyf1"]
 [ext_resource type="PackedScene" uid="uid://nuv1t6k08cgl" path="res://scenes/computer/computer_view_sub_viewport.tscn" id="5_lcih3"]
@@ -23,19 +24,6 @@ size = Vector3(20, 1, 20)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6xly2"]
 data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_513p7"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_lo0ai"]
-sky_material = SubResource("ProceduralSkyMaterial_513p7")
-
-[sub_resource type="Environment" id="Environment_sclr2"]
-background_mode = 2
-sky = SubResource("Sky_lo0ai")
-tonemap_mode = 2
-glow_enabled = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ha10v"]
 shader = ExtResource("7_yrjl7")
@@ -108,7 +96,7 @@ radius = 0.9
 sides = 16
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=999940239]
-environment = SubResource("Environment_sclr2")
+environment = ExtResource("3_nr0b5")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2132701786]
 transform = Transform3D(0.5000001, -0.75, 0.43301266, 0, 0.49999997, 0.86602545, -0.8660254, -0.4330128, 0.25000003, -4.8421545, 0, 0)
