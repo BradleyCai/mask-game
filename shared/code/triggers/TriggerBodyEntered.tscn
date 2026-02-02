@@ -8,7 +8,7 @@ func _ready() -> void:
 	self.body_entered.connect(trigger)
 
 func trigger(_unused) -> void:
-	TriggerUtil.trigger(self)
+	TriggerUtil.trigger.call_deferred(self)
 "
 
 [node name="TriggerBodyEntered" type="Area3D" unique_id=1499705430]
