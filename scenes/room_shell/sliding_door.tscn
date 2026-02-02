@@ -1,8 +1,9 @@
-[gd_scene load_steps=0 format=3 uid="uid://ckyx814hqlkoe"]
+[gd_scene format=3 uid="uid://ckyx814hqlkoe"]
 
-[ext_resource type="Script" uid="uid://d3wjt4hjcxl1y" path="res://scenes/room_shell/sliding_door.gd" id="1_s2ulh"]
+[ext_resource type="Script" path="res://scenes/room_shell/sliding_door.gd" id="1_s2ulh"]
+[ext_resource type="AudioStream" uid="uid://duo2baogtgubc" path="res://sound/Liminal_OS_sfx/ambiant/triggered by something/sci_fi_door_open.wav" id="2_mxkoc"]
 [ext_resource type="PackedScene" uid="uid://b86tj0glrx466" path="res://scenes/room_shell/Door_V3.glb" id="2_q16kn"]
-[ext_resource type="PackedScene" uid="uid://btkwmn8wc0tj0" path="res://shared/code/triggers/TriggerBodyEntered.tscn" id="3_hd7bn"]
+[ext_resource type="PackedScene" path="res://shared/code/triggers/TriggerBodyEntered.tscn" id="3_hd7bn"]
 [ext_resource type="PackedScene" uid="uid://ddgtlk18rbcxf" path="res://shared/code/actions/PlayAnimationAction.tscn" id="4_q16kn"]
 [ext_resource type="PackedScene" uid="uid://6vy2cf4baq5m" path="res://shared/code/actions/RunActionsDeferredAction.tscn" id="5_q16kn"]
 
@@ -83,6 +84,21 @@ tracks/1/keys = {
 "clips": PackedStringArray("DoorAction"),
 "times": PackedFloat32Array(0)
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DoorSound")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_mxkoc")
+}],
+"times": PackedFloat32Array(0.23333335)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_04n01"]
 _data = {
@@ -109,7 +125,7 @@ libraries/ = SubResource("AnimationLibrary_04n01")
 
 [node name="Door_V3" parent="." unique_id=759536228 instance=ExtResource("2_q16kn")]
 
-[node name="Skeleton3D" parent="Door_V3/Door" parent_id_path=PackedInt32Array(759536228, 298580782) index="0" unique_id=1366157410]
+[node name="Skeleton3D" parent="Door_V3/Door" parent_id_path=PackedInt32Array(759536228, 1737285691) index="0" unique_id=1318444556]
 bones/3/position = Vector3(3.2224505, 1.1884347, 0.20111544)
 bones/4/position = Vector3(3.2224505, 1.1884352, -1.5641788)
 
@@ -143,5 +159,7 @@ timeout = 6.0
 [node name="PlayAnimationAction" parent="TriggerBodyEntered/RunActionsDeferredAction" unique_id=1147566309 node_paths=PackedStringArray("animation_player") instance=ExtResource("4_q16kn")]
 animation_name = &"close_door"
 animation_player = NodePath("../../../AnimationPlayer")
+
+[node name="DoorSound" type="AudioStreamPlayer3D" parent="." unique_id=467462005]
 
 [editable path="Door_V3"]

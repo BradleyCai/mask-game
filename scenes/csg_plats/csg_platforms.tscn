@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://nuv1t6k08cgl" path="res://scenes/computer/computer_view_sub_viewport.tscn" id="5_lcih3"]
 [ext_resource type="PackedScene" uid="uid://bxjmk0vd8ntqt" path="res://scenes/room_shell/room_shell.tscn" id="6_gqyf1"]
 [ext_resource type="Shader" uid="uid://biv5h5mcp73uy" path="res://shaders/TV.gdshader" id="7_yrjl7"]
-[ext_resource type="PackedScene" uid="uid://btkwmn8wc0tj0" path="res://shared/code/triggers/TriggerBodyEntered.tscn" id="8_v4wq6"]
-[ext_resource type="PackedScene" uid="uid://blmco1pmd8k5h" path="res://shared/code/actions/Move3DPosAction.tscn" id="9_ympke"]
+[ext_resource type="PackedScene" path="res://shared/code/triggers/TriggerBodyEntered.tscn" id="8_v4wq6"]
+[ext_resource type="PackedScene" path="res://shared/code/actions/Move3DPosAction.tscn" id="9_ympke"]
 [ext_resource type="PackedScene" uid="uid://bp3sa06aifvp3" path="res://shared/code/actions/SwitchSceneAction.tscn" id="10_ympke"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o577s"]
@@ -52,6 +52,25 @@ skeleton = NodePath("../CSGCombiner3D")
 [node name="StaticBody3D" type="StaticBody3D" parent="ground" unique_id=847055088]
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="ground/StaticBody3D" unique_id=1966465953]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+shape = SubResource("BoxShape3D_yrjl7")
+
+[node name="ground2" type="MeshInstance3D" parent="." unique_id=1078839856]
+transform = Transform3D(0.7952654, 0, 0, 0, 4.4883285, 0, 0, 0, 5.1431756, 2.644618, -2.3112204, 0.7866399)
+material_override = SubResource("StandardMaterial3D_o577s")
+mesh = SubResource("BoxMesh_gqyf1")
+skeleton = NodePath("../CSGCombiner3D")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ground2" unique_id=580765295]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="ground2/StaticBody3D" unique_id=2084713038]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+shape = SubResource("BoxShape3D_yrjl7")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="ground2" unique_id=1767927272]
+transform = Transform3D(0.9999995, 0, 0, 0, 0.9999996, 0, 0, 0, 0.99999964, 0.9252422, 1.569987, 0)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="ground2/StaticBody3D2" unique_id=2136095519]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 shape = SubResource("BoxShape3D_yrjl7")
 
