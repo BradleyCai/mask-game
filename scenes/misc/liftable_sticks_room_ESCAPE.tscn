@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c0ci4u2b1sgge"]
+[gd_scene format=3 uid="uid://b6quow7mro07u"]
 
 [ext_resource type="PackedScene" uid="uid://dre5ks40634gm" path="res://scenes/room_shell/static_door.tscn" id="1_rsu1b"]
 [ext_resource type="Environment" uid="uid://ch8jum6qs1fxb" path="res://environments/main_environment.tres" id="2_nmt3u"]
@@ -13,7 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://btkwmn8wc0tj0" path="res://shared/code/triggers/TriggerBodyEntered.tscn" id="12_itmr4"]
 [ext_resource type="PackedScene" uid="uid://bp3sa06aifvp3" path="res://shared/code/actions/SwitchSceneAction.tscn" id="13_djpa7"]
 [ext_resource type="Shader" uid="uid://biv5h5mcp73uy" path="res://shaders/TV.gdshader" id="14_djpa7"]
-[ext_resource type="PackedScene" path="res://shared/code/actions/Move3DPosAction.tscn" id="14_jspd1"]
+[ext_resource type="PackedScene" uid="uid://blmco1pmd8k5h" path="res://shared/code/actions/Move3DPosAction.tscn" id="14_jspd1"]
+[ext_resource type="PackedScene" uid="uid://ctnvio0uk44x" path="res://shared/code/actions/DisplayTextAction.tscn" id="15_0l2e2"]
+[ext_resource type="PackedScene" uid="uid://btxcnyt328w8k" path="res://shared/code/actions/PlayAudioAction.tscn" id="16_sh4qa"]
+[ext_resource type="AudioStream" uid="uid://bkjp6ay7a4x4w" path="res://sound/Liminal_OS_sfx/unique effects/PA_system_speaking1.ogg" id="17_ot4os"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ewvs"]
 
@@ -78,6 +81,9 @@ size = Vector3(3, 0.1, 6)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tesd8"]
 size = Vector3(6.990967, 1, 13.710594)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_271sg"]
+size = Vector3(4.03, 2, 0.5)
 
 [node name="Node3D" type="Node3D" unique_id=685485772]
 
@@ -164,46 +170,46 @@ update_scale = false
 [node name="RoomShell" parent="." unique_id=273484043 instance=ExtResource("11_m61bs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6738834, 1.1097078, 38.02432)
 
-[node name="Cube_031" parent="RoomShell/MaskGame_Ceiling_Seperated" parent_id_path=PackedInt32Array(273484043, 261609234) index="0" unique_id=561211091]
+[node name="Cube_031" parent="RoomShell/MaskGame_Ceiling_Seperated" parent_id_path=PackedInt32Array(273484043, 261609234) index="0" unique_id=385841757]
 visible = false
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_001" parent_id_path=PackedInt32Array(273484043, 261609234, 637170629) index="0" unique_id=2143327574]
+[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_001" parent_id_path=PackedInt32Array(273484043, 261609234, 920974438) index="0" unique_id=2143327574]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00072455406, 0.013285253, 0.17940378)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_001/StaticBody3D" unique_id=1692019171]
 shape = SubResource("BoxShape3D_djpa7")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_009" parent_id_path=PackedInt32Array(273484043, 261609234, 1254263371) index="0" unique_id=342278654]
+[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_009" parent_id_path=PackedInt32Array(273484043, 261609234, 1763543538) index="0" unique_id=342278654]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0011630058, 0.013285253, 0.1260401)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_009/StaticBody3D" unique_id=401113203]
 shape = SubResource("BoxShape3D_u3rwf")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_010" parent_id_path=PackedInt32Array(273484043, 261609234, 1943126913) index="0" unique_id=94786373]
+[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_010" parent_id_path=PackedInt32Array(273484043, 261609234, 892049401) index="0" unique_id=94786373]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0011630058, 0.013285253, 0.17940378)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_010/StaticBody3D" unique_id=1003870593]
 shape = SubResource("BoxShape3D_0l2e2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_011" parent_id_path=PackedInt32Array(273484043, 261609234, 1761925707) index="0" unique_id=1231085273]
+[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_011" parent_id_path=PackedInt32Array(273484043, 261609234, 146756957) index="0" unique_id=1231085273]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.043502092, 0.013285253, 0.17940378)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_011/StaticBody3D" unique_id=352887374]
 shape = SubResource("BoxShape3D_sh4qa")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_012" parent_id_path=PackedInt32Array(273484043, 261609234, 497143005) index="0" unique_id=994832114]
+[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_012" parent_id_path=PackedInt32Array(273484043, 261609234, 1228011854) index="0" unique_id=994832114]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.043501616, 0.013285253, 0.1260401)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_012/StaticBody3D" unique_id=1442897877]
 shape = SubResource("BoxShape3D_ot4os")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_013" parent_id_path=PackedInt32Array(273484043, 261609234, 668705070) index="0" unique_id=98679628]
+[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_013" parent_id_path=PackedInt32Array(273484043, 261609234, 1175669809) index="0" unique_id=98679628]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.043501616, 0.013285253, 0.12604117)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_013/StaticBody3D" unique_id=1661127444]
 shape = SubResource("BoxShape3D_6sjwt")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_014" parent_id_path=PackedInt32Array(273484043, 261609234, 1494592639) index="0" unique_id=1430625373]
+[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_014" parent_id_path=PackedInt32Array(273484043, 261609234, 601900110) index="0" unique_id=1430625373]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.043501616, 0.013285253, 0.1260395)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_014/StaticBody3D" unique_id=743925052]
@@ -289,6 +295,21 @@ move_target = NodePath("../../Character")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerBodyEntered" unique_id=647690787]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8491411, 0, -3.508587)
 shape = SubResource("BoxShape3D_tesd8")
+
+[node name="Level4Text" parent="." unique_id=1228371866 instance=ExtResource("12_itmr4")]
+transform = Transform3D(0.99995965, 0, 0.008988395, 0, 1, 0, -0.008988395, 0, 0.99995965, 1.7856467, 2.4549222, 22.655745)
+
+[node name="DisplayTextAction" parent="Level4Text" unique_id=1388931309 instance=ExtResource("15_0l2e2")]
+text = "PA System: Wait… something is wrong up ahead. When you get there do not move. We’re going to go and fix it, while you do absolutely nothing, understand?"
+timeout = 10.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level4Text" unique_id=1658133224]
+shape = SubResource("BoxShape3D_271sg")
+
+[node name="PlayAudioAction" parent="Level4Text" unique_id=671612330 instance=ExtResource("16_sh4qa")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Level4Text/PlayAudioAction" unique_id=2018966845]
+stream = ExtResource("17_ot4os")
 
 [connection signal="body_entered" from="bowl/checker" to="bowl/checker" method="_on_body_entered"]
 

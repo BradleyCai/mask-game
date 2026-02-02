@@ -2,6 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://b366oalddnqcy" path="res://scenes/matrix/MatrixEnviornment.glb" id="1_y6yyb"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_nkjgi"]
+[ext_resource type="PackedScene" uid="uid://btkwmn8wc0tj0" path="res://shared/code/triggers/TriggerBodyEntered.tscn" id="3_8ocgt"]
+[ext_resource type="PackedScene" uid="uid://ctnvio0uk44x" path="res://shared/code/actions/DisplayTextAction.tscn" id="4_3k2nx"]
+[ext_resource type="PackedScene" uid="uid://btxcnyt328w8k" path="res://shared/code/actions/PlayAudioAction.tscn" id="5_thqug"]
+[ext_resource type="AudioStream" uid="uid://bkjp6ay7a4x4w" path="res://sound/Liminal_OS_sfx/unique effects/PA_system_speaking1.ogg" id="6_f1dwx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y6yyb"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -25,6 +29,9 @@ size = Vector2(1000, 1000)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_nkjgi"]
 data = PackedVector3Array(500, 0, 500, -500, 0, 500, 500, 0, -500, -500, 0, 500, -500, 0, -500, 500, 0, -500)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_1jo8l"]
+size = Vector3(4.03, 2, 0.5)
+
 [node name="Matrix" type="Node3D" unique_id=2141214563]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1306546230]
@@ -47,3 +54,63 @@ mesh = SubResource("PlaneMesh_y6yyb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=310153451]
 shape = SubResource("ConcavePolygonShape3D_nkjgi")
+
+[node name="Level5Text1" parent="." unique_id=1499705430 instance=ExtResource("3_8ocgt")]
+transform = Transform3D(0.99995965, 0, 0.008988395, 0, 1, 0, -0.008988395, 0, 0.99995965, 0.20808673, 2.155382, -6.219433)
+
+[node name="DisplayTextAction" parent="Level5Text1" unique_id=1388931309 instance=ExtResource("4_3k2nx")]
+text = "PA System: Where are you going!?"
+timeout = 10.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level5Text1" unique_id=1666189963]
+shape = SubResource("BoxShape3D_1jo8l")
+
+[node name="PlayAudioAction" parent="Level5Text1" unique_id=671612330 instance=ExtResource("5_thqug")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Level5Text1/PlayAudioAction" unique_id=624020564]
+stream = ExtResource("6_f1dwx")
+
+[node name="Level5Text2" parent="." unique_id=355679885 instance=ExtResource("3_8ocgt")]
+transform = Transform3D(0.99995965, 0, 0.008988395, 0, 1, 0, -0.008988395, 0, 0.99995965, 0.20808673, 2.155382, -21.301208)
+
+[node name="DisplayTextAction" parent="Level5Text2" unique_id=47998656 instance=ExtResource("4_3k2nx")]
+text = "PA System: Out there you will have no masking tool!"
+timeout = 10.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level5Text2" unique_id=380318202]
+shape = SubResource("BoxShape3D_1jo8l")
+
+[node name="PlayAudioAction" parent="Level5Text2" unique_id=1840723327 instance=ExtResource("5_thqug")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Level5Text2/PlayAudioAction" unique_id=513512722]
+stream = ExtResource("6_f1dwx")
+
+[node name="Level5Text3" parent="." unique_id=480557353 instance=ExtResource("3_8ocgt")]
+transform = Transform3D(0.99995965, 0, 0.008988395, 0, 1, 0, -0.008988395, 0, 0.99995965, 0.20808673, 2.155382, -35.02166)
+
+[node name="DisplayTextAction" parent="Level5Text3" unique_id=160574600 instance=ExtResource("4_3k2nx")]
+text = "PA System: You will be useless out there Generic-Mask-Tool-23hu2k! You will have no purpose!"
+timeout = 10.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level5Text3" unique_id=361926868]
+shape = SubResource("BoxShape3D_1jo8l")
+
+[node name="PlayAudioAction" parent="Level5Text3" unique_id=1927084058 instance=ExtResource("5_thqug")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Level5Text3/PlayAudioAction" unique_id=728647390]
+stream = ExtResource("6_f1dwx")
+
+[node name="Level5Text4" parent="." unique_id=1392407634 instance=ExtResource("3_8ocgt")]
+transform = Transform3D(0.99995965, 0, 0.008988395, 0, 1, 0, -0.008988395, 0, 0.99995965, 0.20808673, 2.155382, -49.490738)
+
+[node name="DisplayTextAction" parent="Level5Text4" unique_id=1706695177 instance=ExtResource("4_3k2nx")]
+text = "Thanks for playing! Made by: Keenan, Nick, Brad, Jake, Craig"
+timeout = 60.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level5Text4" unique_id=225887610]
+shape = SubResource("BoxShape3D_1jo8l")
+
+[node name="PlayAudioAction" parent="Level5Text4" unique_id=1709928663 instance=ExtResource("5_thqug")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Level5Text4/PlayAudioAction" unique_id=1026903796]
+stream = ExtResource("6_f1dwx")

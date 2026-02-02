@@ -14,6 +14,9 @@
 [ext_resource type="Shader" uid="uid://biv5h5mcp73uy" path="res://shaders/TV.gdshader" id="12_xs4hy"]
 [ext_resource type="PackedScene" uid="uid://btkwmn8wc0tj0" path="res://shared/code/triggers/TriggerBodyEntered.tscn" id="13_fl53i"]
 [ext_resource type="PackedScene" uid="uid://bp3sa06aifvp3" path="res://shared/code/actions/SwitchSceneAction.tscn" id="14_kx64v"]
+[ext_resource type="PackedScene" uid="uid://ctnvio0uk44x" path="res://shared/code/actions/DisplayTextAction.tscn" id="15_7tngi"]
+[ext_resource type="PackedScene" uid="uid://btxcnyt328w8k" path="res://shared/code/actions/PlayAudioAction.tscn" id="16_kds7g"]
+[ext_resource type="AudioStream" uid="uid://bkjp6ay7a4x4w" path="res://sound/Liminal_OS_sfx/unique effects/PA_system_speaking1.ogg" id="17_6r1w6"]
 
 [sub_resource type="Curve" id="Curve_hgmbt"]
 _limits = [0.0, 1.0, 0.0, 3.0]
@@ -65,6 +68,9 @@ material = SubResource("StandardMaterial3D_xs4hy")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_et0db"]
 size = Vector3(4.7525635, 5.8921204, 1.5756836)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fmsm0"]
+size = Vector3(4.03, 2, 0.5)
 
 [node name="Node3D" type="Node3D" unique_id=685485772]
 
@@ -369,6 +375,51 @@ _scene = "uid://c0ci4u2b1sgge"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerBodyEntered2" unique_id=231834938]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09588623, 2.4460602, -0.2878418)
 shape = SubResource("BoxShape3D_et0db")
+
+[node name="Level3Start1" parent="." unique_id=1489049717 instance=ExtResource("13_fl53i")]
+transform = Transform3D(0.99995965, 0, 0.008988395, 0, 1, 0, -0.008988395, 0, 0.99995965, 1.8077203, 2.3646617, 29.905998)
+
+[node name="DisplayTextAction" parent="Level3Start1" unique_id=1388931309 instance=ExtResource("15_7tngi")]
+text = "PA System: One more step to industry readiness: The industry optimization process!"
+timeout = 10.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level3Start1" unique_id=858186497]
+shape = SubResource("BoxShape3D_fmsm0")
+
+[node name="PlayAudioAction" parent="Level3Start1" unique_id=671612330 instance=ExtResource("16_kds7g")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Level3Start1/PlayAudioAction" unique_id=179223095]
+stream = ExtResource("17_6r1w6")
+
+[node name="Level3Start2" parent="." unique_id=1729305398 instance=ExtResource("13_fl53i")]
+transform = Transform3D(0.99995965, 0, 0.008988395, 0, 1, 0, -0.008988395, 0, 0.99995965, 1.8077203, 2.4549222, 16.864191)
+
+[node name="DisplayTextAction" parent="Level3Start2" unique_id=1528234449 instance=ExtResource("15_7tngi")]
+text = "PA System: Do this and you achieve our dream of raising our company’s value. We approve that you are content for the opportunity we are giving you."
+timeout = 10.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level3Start2" unique_id=933229986]
+shape = SubResource("BoxShape3D_fmsm0")
+
+[node name="PlayAudioAction" parent="Level3Start2" unique_id=246031349 instance=ExtResource("16_kds7g")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Level3Start2/PlayAudioAction" unique_id=1026844900]
+stream = ExtResource("17_6r1w6")
+
+[node name="Level3Complete3" parent="." unique_id=1311938110 instance=ExtResource("13_fl53i")]
+transform = Transform3D(0.99995965, 0, 0.008988395, 0, 1, 0, -0.008988395, 0, 0.99995965, -10.363696, 2.4549222, -7.315733)
+
+[node name="DisplayTextAction" parent="Level3Complete3" unique_id=2110553783 instance=ExtResource("15_7tngi")]
+text = "PA System: We’re sure you tried your best, but your efforts were not to our expectations. Repeat the optimization process again. We hope this helps!"
+timeout = 10.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level3Complete3" unique_id=1674203192]
+shape = SubResource("BoxShape3D_fmsm0")
+
+[node name="PlayAudioAction" parent="Level3Complete3" unique_id=2059287065 instance=ExtResource("16_kds7g")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Level3Complete3/PlayAudioAction" unique_id=118000757]
+stream = ExtResource("17_6r1w6")
 
 [connection signal="body_entered" from="bowl/checker" to="bowl/checker" method="_on_body_entered"]
 
