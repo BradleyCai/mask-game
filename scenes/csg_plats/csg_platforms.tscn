@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://btkwmn8wc0tj0" path="res://shared/code/triggers/TriggerBodyEntered.tscn" id="8_v4wq6"]
 [ext_resource type="PackedScene" uid="uid://blmco1pmd8k5h" path="res://shared/code/actions/Move3DPosAction.tscn" id="9_ympke"]
 [ext_resource type="PackedScene" uid="uid://bp3sa06aifvp3" path="res://shared/code/actions/SwitchSceneAction.tscn" id="10_ympke"]
+[ext_resource type="PackedScene" uid="uid://ctnvio0uk44x" path="res://shared/code/actions/DisplayTextAction.tscn" id="12_23uri"]
+[ext_resource type="PackedScene" uid="uid://btxcnyt328w8k" path="res://shared/code/actions/PlayAudioAction.tscn" id="13_4u0jk"]
+[ext_resource type="AudioStream" uid="uid://bkjp6ay7a4x4w" path="res://sound/Liminal_OS_sfx/unique effects/PA_system_speaking1.ogg" id="14_i044w"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o577s"]
 albedo_texture = ExtResource("1_513p7")
@@ -41,6 +44,9 @@ size = Vector3(100, 1, 100)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nr0b5"]
 size = Vector3(4.7525635, 5.8921204, 1.5756836)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4u0jk"]
+size = Vector3(4.03, 2, 0.5)
 
 [node name="Node3D2" type="Node3D" unique_id=901053143]
 
@@ -207,6 +213,36 @@ _scene = "uid://ly4ovf27g1og"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerBodyEntered2" unique_id=1013309127]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09588623, 2.4460602, -0.2878418)
 shape = SubResource("BoxShape3D_nr0b5")
+
+[node name="Level2IntroText" parent="." unique_id=555158545 instance=ExtResource("8_v4wq6")]
+transform = Transform3D(-0.050959006, 0, 0.99870074, 0, 1, 0, -0.99870074, 0, -0.050959006, -31.033594, 1.4532391, 12.880822)
+
+[node name="DisplayTextAction" parent="Level2IntroText" unique_id=1388931309 instance=ExtResource("12_23uri")]
+text = "PA System: Observe the learning exercise ahead to begin the process. Surely you'll be able to complete a warm-up like this, right?"
+timeout = 10.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level2IntroText" unique_id=277804647]
+shape = SubResource("BoxShape3D_4u0jk")
+
+[node name="PlayAudioAction" parent="Level2IntroText" unique_id=671612330 instance=ExtResource("13_4u0jk")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Level2IntroText/PlayAudioAction" unique_id=913887597]
+stream = ExtResource("14_i044w")
+
+[node name="Level2CompletionText" parent="." unique_id=1726314528 instance=ExtResource("8_v4wq6")]
+transform = Transform3D(-0.025234805, 0, 0.99968165, 0, 1, 0, -0.99968165, 0, -0.025234805, 8.312054, 1.4532391, 0.9182737)
+
+[node name="DisplayTextAction" parent="Level2CompletionText" unique_id=351095443 instance=ExtResource("12_23uri")]
+text = "PA System: Good enough. Let us move on."
+timeout = 10.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level2CompletionText" unique_id=1520756042]
+shape = SubResource("BoxShape3D_4u0jk")
+
+[node name="PlayAudioAction" parent="Level2CompletionText" unique_id=1364929 instance=ExtResource("13_4u0jk")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Level2CompletionText/PlayAudioAction" unique_id=1035318614]
+stream = ExtResource("14_i044w")
 
 [editable path="SubViewport"]
 [editable path="SubViewport2"]
