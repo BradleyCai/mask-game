@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://kfm2wy2udp45" path="res://scenes/computer/computer_and_cart.tscn" id="8_kcfjd"]
 [ext_resource type="PackedScene" uid="uid://btkwmn8wc0tj0" path="res://shared/code/triggers/TriggerBodyEntered.tscn" id="9_q6uuj"]
 [ext_resource type="PackedScene" uid="uid://bp3sa06aifvp3" path="res://shared/code/actions/SwitchSceneAction.tscn" id="10_wmcwa"]
+[ext_resource type="PackedScene" uid="uid://ctnvio0uk44x" path="res://shared/code/actions/DisplayTextAction.tscn" id="12_k3l6j"]
+[ext_resource type="PackedScene" uid="uid://btxcnyt328w8k" path="res://shared/code/actions/PlayAudioAction.tscn" id="13_jw3ls"]
+[ext_resource type="AudioStream" uid="uid://bkjp6ay7a4x4w" path="res://sound/Liminal_OS_sfx/unique effects/PA_system_speaking1.ogg" id="14_8sww4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0em4h"]
 albedo_texture = ExtResource("4_kcfjd")
@@ -33,6 +36,9 @@ shader_parameter/horzFuzzOpt = 0.15
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q6uuj"]
 size = Vector3(4.7525635, 5.8921204, 1.5756836)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0em4h"]
+size = Vector3(4.03, 2, 0.5)
 
 [node name="Level1" type="Node3D" unique_id=1974743313]
 
@@ -110,5 +116,65 @@ _scene = "uid://b62vo4ftcdavk"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerBodyEntered" unique_id=721356913]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09588623, 2.4460602, -0.2878418)
 shape = SubResource("BoxShape3D_q6uuj")
+
+[node name="IntroText" parent="." unique_id=1237235025 instance=ExtResource("9_q6uuj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4532391, -6.851891)
+
+[node name="DisplayTextAction" parent="IntroText" unique_id=1388931309 instance=ExtResource("12_k3l6j")]
+text = "PA System: Generic-Mask-Tool-23hu2k, This is the 730,424th training session for Photoshop Giant AI’s revolutionary masking tool!"
+timeout = 10.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IntroText" unique_id=1159675542]
+shape = SubResource("BoxShape3D_0em4h")
+
+[node name="PlayAudioAction" parent="IntroText" unique_id=671612330 instance=ExtResource("13_jw3ls")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="IntroText/PlayAudioAction" unique_id=1385789056]
+stream = ExtResource("14_8sww4")
+
+[node name="IntroText2" parent="." unique_id=2103998909 instance=ExtResource("9_q6uuj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4532391, -17.257671)
+
+[node name="DisplayTextAction" parent="IntroText2" unique_id=1112763574 instance=ExtResource("12_k3l6j")]
+text = "PA System: This training course will make you industry ready in 3 simple steps. Anyone, including an AI of your level can clear it."
+timeout = 10.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="IntroText2" unique_id=284823063]
+shape = SubResource("BoxShape3D_0em4h")
+
+[node name="PlayAudioAction" parent="IntroText2" unique_id=1011227957 instance=ExtResource("13_jw3ls")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="IntroText2/PlayAudioAction" unique_id=590475262]
+stream = ExtResource("14_8sww4")
+
+[node name="ComputerText" parent="." unique_id=305400721 instance=ExtResource("9_q6uuj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4532391, -25.591423)
+
+[node name="DisplayTextAction" parent="ComputerText" unique_id=1091660232 instance=ExtResource("12_k3l6j")]
+text = "PA System: This is a masking plug-in given to all Generic-Mask-Tools. Interact with the screen to change reality in front of you. Super simple."
+timeout = 10.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ComputerText" unique_id=75038258]
+shape = SubResource("BoxShape3D_0em4h")
+
+[node name="PlayAudioAction" parent="ComputerText" unique_id=1871564197 instance=ExtResource("13_jw3ls")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ComputerText/PlayAudioAction" unique_id=410783003]
+stream = ExtResource("14_8sww4")
+
+[node name="CompletionText" parent="." unique_id=1967969996 instance=ExtResource("9_q6uuj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.452803, 1.4532391, -45.51117)
+
+[node name="DisplayTextAction" parent="CompletionText" unique_id=798894279 instance=ExtResource("12_k3l6j")]
+text = "PA System: Your outputs are satisfactory. Let's move onto the next step. We are increasing the difficulty to make sure you’re enough to FOREVER serve our customers."
+timeout = 10.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CompletionText" unique_id=2008204482]
+shape = SubResource("BoxShape3D_0em4h")
+
+[node name="PlayAudioAction" parent="CompletionText" unique_id=1342770404 instance=ExtResource("13_jw3ls")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CompletionText/PlayAudioAction" unique_id=1339534772]
+stream = ExtResource("14_8sww4")
 
 [editable path="ComputerViewSubViewport"]
