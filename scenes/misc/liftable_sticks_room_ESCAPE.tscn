@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://nuv1t6k08cgl" path="res://scenes/computer/computer_view_sub_viewport.tscn" id="9_ot4os"]
 [ext_resource type="PackedScene" uid="uid://cq7cubtlrmi05" path="res://scenes/computer/mouse_ray.tscn" id="10_6sjwt"]
 [ext_resource type="PackedScene" uid="uid://bxjmk0vd8ntqt" path="res://scenes/room_shell/room_shell.tscn" id="11_m61bs"]
+[ext_resource type="PackedScene" uid="uid://btkwmn8wc0tj0" path="res://shared/code/triggers/TriggerBodyEntered.tscn" id="12_itmr4"]
+[ext_resource type="PackedScene" uid="uid://bp3sa06aifvp3" path="res://shared/code/actions/SwitchSceneAction.tscn" id="13_djpa7"]
+[ext_resource type="Shader" uid="uid://biv5h5mcp73uy" path="res://shaders/TV.gdshader" id="14_djpa7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ewvs"]
 
@@ -27,6 +30,27 @@ data = PackedVector3Array(-1, -0.5, -1, -1, 0.5, -1, -1, -0.5, 1, -1, -0.5, -1, 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2qt5s"]
 size = Vector3(2, 2, 2)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_djpa7"]
+size = Vector3(5.6400757, 0.10119595, 3.5077906)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u3rwf"]
+size = Vector3(5.636188, 0.10119595, 3.398187)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0l2e2"]
+size = Vector3(5.636188, 0.10119595, 3.5077906)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sh4qa"]
+size = Vector3(5.7237287, 0.10119595, 3.5077906)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ot4os"]
+size = Vector3(5.7237277, 0.10119595, 3.398187)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6sjwt"]
+size = Vector3(5.7237277, 0.10119595, 3.3981867)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m61bs"]
+size = Vector3(5.7237277, 0.10119595, 3.3981862)
+
 [sub_resource type="BoxMesh" id="BoxMesh_xs4hy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_om7pe"]
@@ -35,6 +59,29 @@ size = Vector3(2, 2, 2)
 _limits = [0.0, 18.0, 0.0, 10.0]
 _data = [Vector2(0, 14.077496), 0.0, 0.0, 0, 0, Vector2(10, 0), 0.0, 0.0, 0, 0]
 point_count = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jspd1"]
+size = Vector3(4.7525635, 5.8921204, 1.5756836)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jspd1"]
+shader = ExtResource("14_djpa7")
+shader_parameter/vertJerkOpt = 0.0
+shader_parameter/vertMovementOpt = 0.0
+shader_parameter/bottomStaticOpt = 0.0
+shader_parameter/bottomStaticStrenth = 0.7
+shader_parameter/scalinesOpt = 0.8
+shader_parameter/rgbOffsetOpt = 0.2
+shader_parameter/horzFuzzOpt = 0.15
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_djpa7"]
+albedo_color = Color(0.7852175, 0.7852171, 0.78521717, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jspd1"]
+material = SubResource("StandardMaterial3D_djpa7")
+size = Vector3(3, 0.1, 6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tesd8"]
+size = Vector3(3, 0.1, 6)
 
 [node name="Node3D" type="Node3D" unique_id=685485772]
 
@@ -122,7 +169,7 @@ cull_mask = 2
 size = 21.017
 
 [node name="MouseRay" parent="." unique_id=362649603 instance=ExtResource("10_6sjwt")]
-transform = Transform3D(0.6, 0, 0, 0, 1, 0, 0, 0, 0.6, -4.2762694, -9.536743e-07, 5.0670567)
+transform = Transform3D(0.6, 0, 0, 0, 1, 0, 0, 0, 0.6, -5.326028, -9.536743e-07, -8.182343)
 
 [node name="MeshInstance3D" parent="MouseRay/Pillar" index="0" unique_id=513740568]
 layers = 0
@@ -136,6 +183,48 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6738834, 1.1097078, 38.0243
 
 [node name="Cube_031" parent="RoomShell/MaskGame_Ceiling_Seperated" parent_id_path=PackedInt32Array(273484043, 261609234) index="0" unique_id=561211091]
 visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_001" parent_id_path=PackedInt32Array(273484043, 261609234, 637170629) index="0" unique_id=2143327574]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00072455406, 0.013285253, 0.17940378)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_001/StaticBody3D" unique_id=1692019171]
+shape = SubResource("BoxShape3D_djpa7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_009" parent_id_path=PackedInt32Array(273484043, 261609234, 1254263371) index="0" unique_id=342278654]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0011630058, 0.013285253, 0.1260401)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_009/StaticBody3D" unique_id=401113203]
+shape = SubResource("BoxShape3D_u3rwf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_010" parent_id_path=PackedInt32Array(273484043, 261609234, 1943126913) index="0" unique_id=94786373]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0011630058, 0.013285253, 0.17940378)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_010/StaticBody3D" unique_id=1003870593]
+shape = SubResource("BoxShape3D_0l2e2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_011" parent_id_path=PackedInt32Array(273484043, 261609234, 1761925707) index="0" unique_id=1231085273]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.043502092, 0.013285253, 0.17940378)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_011/StaticBody3D" unique_id=352887374]
+shape = SubResource("BoxShape3D_sh4qa")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_012" parent_id_path=PackedInt32Array(273484043, 261609234, 497143005) index="0" unique_id=994832114]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.043501616, 0.013285253, 0.1260401)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_012/StaticBody3D" unique_id=1442897877]
+shape = SubResource("BoxShape3D_ot4os")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_013" parent_id_path=PackedInt32Array(273484043, 261609234, 668705070) index="0" unique_id=98679628]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.043501616, 0.013285253, 0.12604117)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_013/StaticBody3D" unique_id=1661127444]
+shape = SubResource("BoxShape3D_6sjwt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_014" parent_id_path=PackedInt32Array(273484043, 261609234, 1494592639) index="0" unique_id=1430625373]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.043501616, 0.013285253, 0.1260395)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_014/StaticBody3D" unique_id=743925052]
+shape = SubResource("BoxShape3D_m61bs")
 
 [node name="SlidingDoor4" parent="RoomShell" index="5" unique_id=712693841]
 visible = false
@@ -169,7 +258,48 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8291104, 0, -1.3048122)
 falloff = SubResource("Curve_rsu1b")
 
 [node name="ball" parent="sticks2" index="808" unique_id=547096992]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.447159, -9.536743e-07, 6.371869)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4969177, -9.536743e-07, -6.87753)
+
+[node name="TriggerBodyEntered2" parent="." unique_id=1499705430 instance=ExtResource("12_itmr4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.341802, 0.64206207, -26.31605)
+
+[node name="SwitchSceneAction" parent="TriggerBodyEntered2" unique_id=1382526338 instance=ExtResource("13_djpa7")]
+_scene = "uid://c0ci4u2b1sgge"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerBodyEntered2" unique_id=1178340711]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09588623, 2.4460602, -0.2878418)
+shape = SubResource("BoxShape3D_jspd1")
+
+[node name="CeilingTriggerBodyEntered" parent="." unique_id=1969791645 instance=ExtResource("12_itmr4")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2.206418, 7.5960417, -0.24328732)
+
+[node name="SwitchSceneAction" parent="CeilingTriggerBodyEntered" unique_id=1220847601 instance=ExtResource("13_djpa7")]
+_scene = "uid://3sl10epbswwf"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CeilingTriggerBodyEntered" unique_id=4047857]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09588623, 2.4460602, -0.2878418)
+shape = SubResource("BoxShape3D_jspd1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1375284764]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1866509048]
+material = SubResource("ShaderMaterial_jspd1")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CeilingPart" type="MeshInstance3D" parent="." unique_id=51070436]
+transform = Transform3D(0.9390465, 0.1172141, -0.3231908, -0.12386125, 0.99229956, 0, 0.3207021, 0.040030822, 0.9463338, 1.331557, 7.2327714, -1.0067427)
+mesh = SubResource("BoxMesh_jspd1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CeilingPart" unique_id=1807751471]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CeilingPart/StaticBody3D" unique_id=821506603]
+shape = SubResource("BoxShape3D_tesd8")
 
 [connection signal="body_entered" from="bowl/checker" to="bowl/checker" method="_on_body_entered"]
 
