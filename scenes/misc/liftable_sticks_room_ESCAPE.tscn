@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c5y2tckfw1elh"]
+[gd_scene format=3 uid="uid://c0ci4u2b1sgge"]
 
 [ext_resource type="PackedScene" uid="uid://dre5ks40634gm" path="res://scenes/room_shell/static_door.tscn" id="1_rsu1b"]
 [ext_resource type="Environment" uid="uid://ch8jum6qs1fxb" path="res://environments/main_environment.tres" id="2_nmt3u"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://btkwmn8wc0tj0" path="res://shared/code/triggers/TriggerBodyEntered.tscn" id="12_itmr4"]
 [ext_resource type="PackedScene" uid="uid://bp3sa06aifvp3" path="res://shared/code/actions/SwitchSceneAction.tscn" id="13_djpa7"]
 [ext_resource type="Shader" uid="uid://biv5h5mcp73uy" path="res://shaders/TV.gdshader" id="14_djpa7"]
+[ext_resource type="PackedScene" path="res://shared/code/actions/Move3DPosAction.tscn" id="14_jspd1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ewvs"]
 
@@ -76,7 +77,7 @@ material = SubResource("StandardMaterial3D_djpa7")
 size = Vector3(3, 0.1, 6)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tesd8"]
-size = Vector3(3, 0.1, 6)
+size = Vector3(6.990967, 1, 13.710594)
 
 [node name="Node3D" type="Node3D" unique_id=685485772]
 
@@ -163,46 +164,46 @@ update_scale = false
 [node name="RoomShell" parent="." unique_id=273484043 instance=ExtResource("11_m61bs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6738834, 1.1097078, 38.02432)
 
-[node name="Cube_031" parent="RoomShell/MaskGame_Ceiling_Seperated" parent_id_path=PackedInt32Array(273484043, 261609234) index="0" unique_id=979287082]
+[node name="Cube_031" parent="RoomShell/MaskGame_Ceiling_Seperated" parent_id_path=PackedInt32Array(273484043, 261609234) index="0" unique_id=561211091]
 visible = false
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_001" parent_id_path=PackedInt32Array(273484043, 261609234, 195288283) index="0" unique_id=2143327574]
+[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_001" parent_id_path=PackedInt32Array(273484043, 261609234, 637170629) index="0" unique_id=2143327574]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00072455406, 0.013285253, 0.17940378)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_001/StaticBody3D" unique_id=1692019171]
 shape = SubResource("BoxShape3D_djpa7")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_009" parent_id_path=PackedInt32Array(273484043, 261609234, 859495822) index="0" unique_id=342278654]
+[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_009" parent_id_path=PackedInt32Array(273484043, 261609234, 1254263371) index="0" unique_id=342278654]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0011630058, 0.013285253, 0.1260401)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_009/StaticBody3D" unique_id=401113203]
 shape = SubResource("BoxShape3D_u3rwf")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_010" parent_id_path=PackedInt32Array(273484043, 261609234, 2034579756) index="0" unique_id=94786373]
+[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_010" parent_id_path=PackedInt32Array(273484043, 261609234, 1943126913) index="0" unique_id=94786373]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0011630058, 0.013285253, 0.17940378)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_010/StaticBody3D" unique_id=1003870593]
 shape = SubResource("BoxShape3D_0l2e2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_011" parent_id_path=PackedInt32Array(273484043, 261609234, 342889158) index="0" unique_id=1231085273]
+[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_011" parent_id_path=PackedInt32Array(273484043, 261609234, 1761925707) index="0" unique_id=1231085273]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.043502092, 0.013285253, 0.17940378)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_011/StaticBody3D" unique_id=352887374]
 shape = SubResource("BoxShape3D_sh4qa")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_012" parent_id_path=PackedInt32Array(273484043, 261609234, 1437097660) index="0" unique_id=994832114]
+[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_012" parent_id_path=PackedInt32Array(273484043, 261609234, 497143005) index="0" unique_id=994832114]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.043501616, 0.013285253, 0.1260401)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_012/StaticBody3D" unique_id=1442897877]
 shape = SubResource("BoxShape3D_ot4os")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_013" parent_id_path=PackedInt32Array(273484043, 261609234, 1892652375) index="0" unique_id=98679628]
+[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_013" parent_id_path=PackedInt32Array(273484043, 261609234, 668705070) index="0" unique_id=98679628]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.043501616, 0.013285253, 0.12604117)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_013/StaticBody3D" unique_id=1661127444]
 shape = SubResource("BoxShape3D_6sjwt")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_014" parent_id_path=PackedInt32Array(273484043, 261609234, 613272) index="0" unique_id=1430625373]
+[node name="StaticBody3D" type="StaticBody3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_014" parent_id_path=PackedInt32Array(273484043, 261609234, 1494592639) index="0" unique_id=1430625373]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.043501616, 0.013285253, 0.1260395)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RoomShell/MaskGame_Ceiling_Seperated/Cube_014/StaticBody3D" unique_id=743925052]
@@ -278,9 +279,15 @@ metadata/_edit_use_anchors_ = true
 transform = Transform3D(0.9390465, 0.1172141, -0.3231908, -0.12386125, 0.99229956, 0, 0.3207021, 0.040030822, 0.9463338, 1.331557, 7.2327714, -1.0067427)
 mesh = SubResource("BoxMesh_jspd1")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="CeilingPart" unique_id=1807751471]
+[node name="TriggerBodyEntered" parent="." unique_id=1756242627 instance=ExtResource("12_itmr4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.056484, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CeilingPart/StaticBody3D" unique_id=821506603]
+[node name="Move3dPosAction" parent="TriggerBodyEntered" unique_id=1629091126 node_paths=PackedStringArray("move_target") instance=ExtResource("14_jspd1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.899901, 8.94511)
+move_target = NodePath("../../Character")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerBodyEntered" unique_id=647690787]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8491411, 0, -3.508587)
 shape = SubResource("BoxShape3D_tesd8")
 
 [connection signal="body_entered" from="bowl/checker" to="bowl/checker" method="_on_body_entered"]
