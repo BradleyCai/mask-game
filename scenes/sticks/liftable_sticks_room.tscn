@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://bxjmk0vd8ntqt" path="res://scenes/room_shell/room_shell.tscn" id="8_mqbo8"]
 [ext_resource type="Texture2D" uid="uid://cpmxigxpqfx1a" path="res://shared/assets/images/debug/dark.png" id="9_2ewvs"]
 [ext_resource type="Shader" uid="uid://biv5h5mcp73uy" path="res://shaders/TV.gdshader" id="12_xs4hy"]
+[ext_resource type="PackedScene" uid="uid://btkwmn8wc0tj0" path="res://shared/code/triggers/TriggerBodyEntered.tscn" id="13_fl53i"]
+[ext_resource type="PackedScene" uid="uid://bp3sa06aifvp3" path="res://shared/code/actions/SwitchSceneAction.tscn" id="14_kx64v"]
 
 [sub_resource type="Curve" id="Curve_hgmbt"]
 _limits = [0.0, 1.0, 0.0, 3.0]
@@ -60,6 +62,9 @@ albedo_color = Color(0.53333336, 1, 1, 0.09411765)
 material = SubResource("StandardMaterial3D_xs4hy")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kx64v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_et0db"]
+size = Vector3(4.7525635, 5.8921204, 1.5756836)
 
 [node name="Node3D" type="Node3D" unique_id=685485772]
 
@@ -354,6 +359,16 @@ mesh = SubResource("BoxMesh_om7pe")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" unique_id=1143199267]
 shape = SubResource("BoxShape3D_kx64v")
+
+[node name="TriggerBodyEntered2" parent="." unique_id=1499705430 instance=ExtResource("13_fl53i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.341802, 0.64206207, -26.31605)
+
+[node name="SwitchSceneAction" parent="TriggerBodyEntered2" unique_id=592288830 instance=ExtResource("14_kx64v")]
+_scene = "uid://c5y2tckfw1elh"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerBodyEntered2" unique_id=231834938]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09588623, 2.4460602, -0.2878418)
+shape = SubResource("BoxShape3D_et0db")
 
 [connection signal="body_entered" from="bowl/checker" to="bowl/checker" method="_on_body_entered"]
 
