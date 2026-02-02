@@ -75,7 +75,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7959453, 0, -0.8237903)
 falloff = SubResource("Curve_hgmbt")
 
-[node name="ball" parent="sticks2" index="808" unique_id=943980869]
+[node name="ball" parent="sticks2" index="808" unique_id=952679165]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4803243, -9.536743e-07, 5.890847)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1298489255]
@@ -153,7 +153,7 @@ size = 21.017
 [node name="MouseRay" parent="." unique_id=362649603 instance=ExtResource("7_hgmbt")]
 transform = Transform3D(0.6, 0, 0, 0, 1, 0, 0, 0, 0.6, -4.2762694, -9.536743e-07, 5.0670567)
 
-[node name="MeshInstance3D" parent="MouseRay/Pillar" index="0" unique_id=513740568]
+[node name="MeshInstance3D" parent="MouseRay/Pillar" parent_id_path=PackedInt32Array(362649603, 1257191310) index="0" unique_id=513740568]
 layers = 0
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="MouseRay" unique_id=835574996]
