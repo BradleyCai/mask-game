@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://8ggoc7sigrh7"]
+
+[resource]
+resource_name = "Transparent Floor"
+transparency = 3
+alpha_hash_scale = 1.0
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 0.4862745)
+roughness = 0.58
