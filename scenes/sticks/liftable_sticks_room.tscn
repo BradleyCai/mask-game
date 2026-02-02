@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cq7cubtlrmi05" path="res://scenes/computer/mouse_ray.tscn" id="7_hgmbt"]
 [ext_resource type="PackedScene" uid="uid://bxjmk0vd8ntqt" path="res://scenes/room_shell/room_shell.tscn" id="8_mqbo8"]
 [ext_resource type="Texture2D" uid="uid://cpmxigxpqfx1a" path="res://shared/assets/images/debug/dark.png" id="9_2ewvs"]
+[ext_resource type="Shader" uid="uid://biv5h5mcp73uy" path="res://shaders/TV.gdshader" id="12_xs4hy"]
 
 [sub_resource type="Curve" id="Curve_hgmbt"]
 _limits = [0.0, 1.0, 0.0, 3.0]
@@ -36,6 +37,16 @@ size = Vector3(2, 2, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_om7pe"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_om7pe"]
+shader = ExtResource("12_xs4hy")
+shader_parameter/vertJerkOpt = 0.0
+shader_parameter/vertMovementOpt = 0.0
+shader_parameter/bottomStaticOpt = 0.0
+shader_parameter/bottomStaticStrenth = 0.7
+shader_parameter/scalinesOpt = 0.8
+shader_parameter/rgbOffsetOpt = 0.2
+shader_parameter/horzFuzzOpt = 0.15
+
 [node name="Node3D" type="Node3D" unique_id=685485772]
 
 [node name="StaticDoor" parent="." unique_id=666715167 instance=ExtResource("1_gq16b")]
@@ -45,9 +56,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.094321, 1.1001738, -3.965
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 2.5617516, 3.7729368, 0)
 visible = false
 shadow_enabled = true
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=738808877]
-environment = ExtResource("1_2ewvs")
 
 [node name="sticks2" parent="." unique_id=1705130095 instance=ExtResource("1_p17da")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7959453, 0, -0.8237903)
@@ -131,7 +139,7 @@ size = 21.017
 [node name="MouseRay" parent="." unique_id=362649603 instance=ExtResource("7_hgmbt")]
 transform = Transform3D(0.6, 0, 0, 0, 1, 0, 0, 0, 0.6, -4.2762694, -9.536743e-07, 5.0670567)
 
-[node name="MeshInstance3D" parent="MouseRay/Pillar" index="0"]
+[node name="MeshInstance3D" parent="MouseRay/Pillar" index="0" unique_id=513740568]
 layers = 0
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="MouseRay" unique_id=835574996]
@@ -167,6 +175,21 @@ skeleton = NodePath("../CSGCombiner3D")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="ground2/StaticBody3D" unique_id=1552907311]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 shape = SubResource("BoxShape3D_om7pe")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1635158961]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1657176318]
+material = SubResource("ShaderMaterial_om7pe")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1592399712]
+environment = ExtResource("1_2ewvs")
 
 [connection signal="body_entered" from="bowl/checker" to="bowl/checker" method="_on_body_entered"]
 
