@@ -151,9 +151,9 @@ mouse_ray = NodePath("../MouseRay")
 [node name="SubViewport" parent="." unique_id=1835432831 instance=ExtResource("6_hgmbt")]
 
 [node name="ViewportCamera" parent="SubViewport" index="1" unique_id=1352610698]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 16.25358, 0.709)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.45397377, 16.25358, 0.89779127)
 cull_mask = 2
-size = 21.017
+size = 8.742
 
 [node name="MouseRay" parent="." unique_id=362649603 instance=ExtResource("7_hgmbt")]
 transform = Transform3D(0.6, 0, 0, 0, 1, 0, 0, 0, 0.6, -4.2762694, -9.536743e-07, 5.0670567)
@@ -364,7 +364,7 @@ shape = SubResource("BoxShape3D_kx64v")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.341802, 0.64206207, -26.31605)
 
 [node name="SwitchSceneAction" parent="TriggerBodyEntered2" unique_id=592288830 instance=ExtResource("14_kx64v")]
-_scene = "uid://c5y2tckfw1elh"
+_scene = "uid://c0ci4u2b1sgge"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerBodyEntered2" unique_id=231834938]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09588623, 2.4460602, -0.2878418)
