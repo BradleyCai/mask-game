@@ -256,7 +256,7 @@ shape = SubResource("BoxShape3D_jspd1")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 2.206418, 7.5960417, -0.24328732)
 
 [node name="SwitchSceneAction" parent="CeilingTriggerBodyEntered" unique_id=1220847601 instance=ExtResource("13_djpa7")]
-_scene = "uid://3sl10epbswwf"
+_scene = "uid://d4d1xdt5kche3"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CeilingTriggerBodyEntered" unique_id=4047857]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09588623, 2.4460602, -0.2878418)
