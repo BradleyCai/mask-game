@@ -3,13 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://cpmxigxpqfx1a" path="res://shared/assets/images/debug/dark.png" id="1_513p7"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="2_sclr2"]
 [ext_resource type="Environment" uid="uid://ch8jum6qs1fxb" path="res://environments/main_environment.tres" id="3_nr0b5"]
+[ext_resource type="Material" uid="uid://dnnc8h3bsy6yk" path="res://materials/orange.tres" id="3_wwh5h"]
 [ext_resource type="PackedScene" uid="uid://kfm2wy2udp45" path="res://scenes/computer/computer_and_cart.tscn" id="4_lcih3"]
 [ext_resource type="PackedScene" uid="uid://cq7cubtlrmi05" path="res://scenes/computer/mouse_ray.tscn" id="5_gqyf1"]
 [ext_resource type="PackedScene" uid="uid://nuv1t6k08cgl" path="res://scenes/computer/computer_view_sub_viewport.tscn" id="5_lcih3"]
 [ext_resource type="PackedScene" uid="uid://bxjmk0vd8ntqt" path="res://scenes/room_shell/room_shell.tscn" id="6_gqyf1"]
 [ext_resource type="Shader" uid="uid://biv5h5mcp73uy" path="res://shaders/TV.gdshader" id="7_yrjl7"]
-[ext_resource type="PackedScene" path="res://shared/code/triggers/TriggerBodyEntered.tscn" id="8_v4wq6"]
-[ext_resource type="PackedScene" path="res://shared/code/actions/Move3DPosAction.tscn" id="9_ympke"]
+[ext_resource type="PackedScene" uid="uid://btkwmn8wc0tj0" path="res://shared/code/triggers/TriggerBodyEntered.tscn" id="8_v4wq6"]
+[ext_resource type="PackedScene" uid="uid://blmco1pmd8k5h" path="res://shared/code/actions/Move3DPosAction.tscn" id="9_ympke"]
 [ext_resource type="PackedScene" uid="uid://bp3sa06aifvp3" path="res://shared/code/actions/SwitchSceneAction.tscn" id="10_ympke"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o577s"]
@@ -41,7 +42,7 @@ size = Vector3(100, 1, 100)
 [sub_resource type="BoxShape3D" id="BoxShape3D_nr0b5"]
 size = Vector3(4.7525635, 5.8921204, 1.5756836)
 
-[node name="Node3D" type="Node3D" unique_id=901053143]
+[node name="Node3D2" type="Node3D" unique_id=901053143]
 
 [node name="ground" type="MeshInstance3D" parent="." unique_id=375454775]
 transform = Transform3D(9.936638, 0, 0, 0, 4.4883285, 0, 0, 0, 23.196516, -10.141731, -2.3112204, 7.8238964)
@@ -90,29 +91,41 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -37.39
 in_air_momentum = false
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1902394528]
+cast_shadow = 0
 use_collision = true
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1668656175]
 transform = Transform3D(1.6, 0, 0, 0, 0.19999999, 0, 0, 0, 4.6080003, -2.8138294, 0, 1.2577143)
+cast_shadow = 0
+material = ExtResource("3_wwh5h")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=713167282]
 transform = Transform3D(2.6305838, 0, 0, 0, 0.19999999, 0, 0, 0, 2.0683005, -2.9337494, -4.7683716e-07, 10.776214)
+cast_shadow = 0
+material = ExtResource("3_wwh5h")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1615861595]
 transform = Transform3D(2.6305838, 0, 0, 0, 0.19999999, 0, 0, 0, 2.0683005, 1.9657296, -4.7683716e-07, 0.7998581)
+cast_shadow = 0
+material = ExtResource("3_wwh5h")
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="CSGCombiner3D" unique_id=1618946937]
+cast_shadow = 0
 operation = 1
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D/CSGCombiner3D" unique_id=38715191]
 transform = Transform3D(1, 0, 0, 0, 1.667, 0, 0, 0, 1, -1.3466935, -9.536743e-07, 0.13501233)
+cast_shadow = 0
 radius = 0.9
 sides = 16
+material = ExtResource("3_wwh5h")
 
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCombiner3D/CSGCombiner3D" unique_id=1159204747]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2934618, 0, 6.2929707)
+cast_shadow = 0
 radius = 0.9
 sides = 16
+material = ExtResource("3_wwh5h")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=999940239]
 environment = ExtResource("3_nr0b5")

@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dnnc8h3bsy6yk"]
+
+[ext_resource type="Texture2D" uid="uid://bk0vpa3n74vx5" path="res://shared/assets/images/debug/orange.png" id="1_ndhqq"]
+
+[resource]
+transparency = 1
+blend_mode = 1
+albedo_texture = ExtResource("1_ndhqq")
