@@ -7,8 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://nuv1t6k08cgl" path="res://scenes/computer/computer_view_sub_viewport.tscn" id="5_lcih3"]
 [ext_resource type="PackedScene" uid="uid://bxjmk0vd8ntqt" path="res://scenes/room_shell/room_shell.tscn" id="6_gqyf1"]
 [ext_resource type="Shader" uid="uid://biv5h5mcp73uy" path="res://shaders/TV.gdshader" id="7_yrjl7"]
-[ext_resource type="PackedScene" path="res://shared/code/triggers/TriggerBodyEntered.tscn" id="8_v4wq6"]
-[ext_resource type="PackedScene" path="res://shared/code/actions/Move3DPosAction.tscn" id="9_ympke"]
+[ext_resource type="PackedScene" uid="uid://btkwmn8wc0tj0" path="res://shared/code/triggers/TriggerBodyEntered.tscn" id="8_v4wq6"]
+[ext_resource type="PackedScene" uid="uid://blmco1pmd8k5h" path="res://shared/code/actions/Move3DPosAction.tscn" id="9_ympke"]
+[ext_resource type="PackedScene" uid="uid://bp3sa06aifvp3" path="res://shared/code/actions/SwitchSceneAction.tscn" id="10_ympke"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o577s"]
 albedo_texture = ExtResource("1_513p7")
@@ -48,6 +49,9 @@ shader_parameter/horzFuzzOpt = 0.15
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v4wq6"]
 size = Vector3(100, 1, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nr0b5"]
+size = Vector3(4.7525635, 5.8921204, 1.5756836)
 
 [node name="Node3D" type="Node3D" unique_id=901053143]
 
@@ -173,6 +177,16 @@ shape = SubResource("BoxShape3D_v4wq6")
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.824711, 0, 3.9804106)
 viewport = NodePath("../SubViewport")
 mouse_ray = NodePath("../MouseRay")
+
+[node name="TriggerBodyEntered2" parent="." unique_id=2102556098 instance=ExtResource("8_v4wq6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.542305, 0.64206207, 1.4331968)
+
+[node name="SwitchSceneAction" parent="TriggerBodyEntered2" unique_id=2030972513 instance=ExtResource("10_ympke")]
+_scene = "uid://ly4ovf27g1og"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TriggerBodyEntered2" unique_id=1013309127]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09588623, 2.4460602, -0.2878418)
+shape = SubResource("BoxShape3D_nr0b5")
 
 [editable path="SubViewport"]
 [editable path="SubViewport2"]
