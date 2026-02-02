@@ -1,17 +1,18 @@
 [gd_scene format=3 uid="uid://bxjmk0vd8ntqt"]
 
-[ext_resource type="PackedScene" uid="uid://xfwckrvdn1aw" path="res://scenes/room_shell/MaskGame_Ceiling.glb" id="2_h1n45"]
-[ext_resource type="PackedScene" uid="uid://btsoabe3hhpvh" path="res://scenes/room_shell/MaskGame_FullMap_V3.glb" id="2_vw02o"]
+[ext_resource type="PackedScene" uid="uid://ct3aanlgm2v4c" path="res://scenes/room_shell/MaskGame_Ceiling_Seperated.glb" id="1_480df"]
+[ext_resource type="PackedScene" uid="uid://dck3r48hcvu33" path="res://scenes/room_shell/MaskGame_FullMap_V4.glb" id="1_h1n45"]
 [ext_resource type="PackedScene" uid="uid://dre5ks40634gm" path="res://scenes/room_shell/static_door.tscn" id="3_480df"]
 [ext_resource type="PackedScene" uid="uid://ckyx814hqlkoe" path="res://scenes/room_shell/sliding_door.tscn" id="3_h1n45"]
 
 [node name="RoomShell" type="Node3D" unique_id=273484043]
 
-[node name="MaskGame_Ceiling" parent="." unique_id=1788502059 instance=ExtResource("2_h1n45")]
+[node name="MaskGame_Ceiling_Seperated" parent="." unique_id=261609234 instance=ExtResource("1_480df")]
 
-[node name="MaskGame_FullMap_V3" parent="." unique_id=424272272 instance=ExtResource("2_vw02o")]
+[node name="MaskGame_FullMap_V4" parent="." unique_id=1945981489 instance=ExtResource("1_h1n45")]
 
 [node name="StaticDoor1" parent="." unique_id=666715167 instance=ExtResource("3_480df")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.9616504)
 
 [node name="SlidingDoor2" parent="." unique_id=86795301 instance=ExtResource("3_h1n45")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.1, 0, 0, -4.9599543)

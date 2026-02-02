@@ -1,7 +1,7 @@
 [gd_scene load_steps=0 format=3 uid="uid://ckyx814hqlkoe"]
 
-[ext_resource type="PackedScene" uid="uid://dw8x5hm8r7w7w" path="res://scenes/room_shell/Door_V2(1).glb" id="1_qwasj"]
 [ext_resource type="Script" uid="uid://d3wjt4hjcxl1y" path="res://scenes/room_shell/sliding_door.gd" id="1_s2ulh"]
+[ext_resource type="PackedScene" uid="uid://b86tj0glrx466" path="res://scenes/room_shell/Door_V3.glb" id="2_q16kn"]
 [ext_resource type="PackedScene" uid="uid://btkwmn8wc0tj0" path="res://shared/code/triggers/TriggerBodyEntered.tscn" id="3_hd7bn"]
 [ext_resource type="PackedScene" uid="uid://ddgtlk18rbcxf" path="res://shared/code/actions/PlayAnimationAction.tscn" id="4_q16kn"]
 [ext_resource type="PackedScene" uid="uid://6vy2cf4baq5m" path="res://shared/code/actions/RunActionsDeferredAction.tscn" id="5_q16kn"]
@@ -9,79 +9,79 @@
 [sub_resource type="Animation" id="Animation_04n01"]
 resource_name = "RESET"
 length = 0.01
-tracks/0/type = "animation"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Door_V2(1)/AnimationPlayer")
+tracks/0/path = NodePath("StaticBody3D/CollisionShape3D3:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"clips": PackedStringArray("Armature|mixamo_com|Layer0"),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("StaticBody3D/CollisionShape3D3:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
 }
+tracks/1/type = "animation"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door_V3/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": PackedStringArray("Armature|mixamo_com|Layer0"),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_qwasj"]
 resource_name = "close_door"
 length = 4.0
-tracks/0/type = "animation"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Door_V2(1)/AnimationPlayer")
+tracks/0/path = NodePath("StaticBody3D/CollisionShape3D3:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"clips": PackedStringArray("CloseDoor"),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("StaticBody3D/CollisionShape3D3:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0, 2.9804945),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
 }
+tracks/1/type = "animation"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door_V3/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": PackedStringArray("CloseDoor"),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_s2ulh"]
 resource_name = "open_door"
 length = 4.0
-tracks/0/type = "animation"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Door_V2(1)/AnimationPlayer")
+tracks/0/path = NodePath("StaticBody3D/CollisionShape3D3:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"clips": PackedStringArray("DoorAction"),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("StaticBody3D/CollisionShape3D3:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.901869),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
+}
+tracks/1/type = "animation"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Door_V3/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": PackedStringArray("DoorAction"),
+"times": PackedFloat32Array(0)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_04n01"]
@@ -104,14 +104,14 @@ size = Vector3(7.598, 2.72, 4.136)
 script = ExtResource("1_s2ulh")
 animation_player = NodePath("AnimationPlayer")
 
-[node name="Door_V2(1)" parent="." unique_id=250965314 instance=ExtResource("1_qwasj")]
-
-[node name="Skeleton3D" parent="Door_V2(1)/Door" parent_id_path=PackedInt32Array(250965314, 1957056317) index="0" unique_id=1628154824]
-bones/3/position = Vector3(3.2224505, 1.1884347, 0.20111544)
-bones/4/position = Vector3(3.2224505, 1.1884352, -1.5641788)
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=479124261]
 libraries/ = SubResource("AnimationLibrary_04n01")
+
+[node name="Door_V3" parent="." unique_id=759536228 instance=ExtResource("2_q16kn")]
+
+[node name="Skeleton3D" parent="Door_V3/Door" parent_id_path=PackedInt32Array(759536228, 298580782) index="0" unique_id=1366157410]
+bones/3/position = Vector3(3.2224505, 1.1884347, 0.20111544)
+bones/4/position = Vector3(3.2224505, 1.1884352, -1.5641788)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1738989013]
 
@@ -144,4 +144,4 @@ timeout = 6.0
 animation_name = &"close_door"
 animation_player = NodePath("../../../AnimationPlayer")
 
-[editable path="Door_V2(1)"]
+[editable path="Door_V3"]
